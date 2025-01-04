@@ -1,6 +1,20 @@
+---
+title: Sommerrollen
+date: 2025-01-03 12:00:00 +0100
+categories: [rezepte, herzhaftes]
+tags: [mittagessen, vegan, glutenfrei]     # TAG names should always be lowercase
+description: vegetarische Sommerrollen mit Reispapier, Salat, Gemüse, Tofu und Pilzen
+toc: true
+media_subpath: /assets/img/rezepte
+---
+
 # Schnelles Rezept für Sommerrollen
 **Für 4 Personen**
-## ![[vegane_sommerrollen_1.jpg]]Zutaten:
+
+![Sommerrolle auf einem weißen Teller vor einem reich gedeckten Tisch](vegane_sommerrollen_1.jpg)
+_Endresultat_
+
+## Zutaten:
 - 15-20 Blätter Reispapier 
 ### Für die Füllung:
 - 5 Blätter Eisbergsalat
@@ -27,4 +41,9 @@ Als letztes heißes Wasser in einen großen, tiefen Teller geben und die Reispap
 *Rezept von Marek.*
 Inspiration von diesem Reddit-Post:
 https://www.reddit.com/r/keinstresskochen/s/wBFk0Fhg6X
-![[vegane_sommerrollen_2.jpg]]![[vegane_sommerrollen_3.jpg]]
+
+![Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können](vegane_sommerrollen_2.jpg)
+_Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können_
+
+![Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können, von einem niedrigeren Winkel fotografiert](vegane_sommerrollen_3.jpg)
+_Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können, von einem niedrigeren Winkel fotografiert_

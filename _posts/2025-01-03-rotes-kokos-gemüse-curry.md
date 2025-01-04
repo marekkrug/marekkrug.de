@@ -1,3 +1,14 @@
+---
+title: Rotes Kokos Gemüse Curry
+date: 2025-01-03 12:00:00 +0100
+categories: [rezepte, herzhaftes]
+tags: [mittagessen, vegan, glutenfrei]     # TAG names should always be lowercase
+description: schnelles, veganes Curry mit Paprika, Kokosmilch und Tiefkühlgemüse
+toc: true
+media_subpath: /assets/img/rezepte
+---
+
+
 # Rotes Kokos Gemüse Curry
 aus dem Buch "Vegan für Faule" (GU Vegan), leicht abgeändert von murmeldin
 Für 4 Personen

@@ -1,7 +1,17 @@
+---
+title: Tortilla-Wraps
+date: 2025-01-03 12:00:00 +0100
+categories: [rezepte, herzhaftes]
+tags: [mittagessen, vegan, glutenfrei]     # TAG names should always be lowercase
+description: vegane Tortilla-Wraps mit Sojageschnetzeltem, Bohnen, Pilzen und Gemüse
+toc: true
+media_subpath: /assets/img/rezepte
+---
+
 # Tortilla-Wraps
 für 4 Personen
 Rezept entwickelt von murmeldin
-![[tortilla-wraps.jpg]]
+![Ein Teller mit Tortilla-Wraps](tortilla-wraps.jpg)
 ## Zutaten:
 ### Rohe Zutaten
 - ~ 150-200g Bohnen (aus der Dose, abtropfgewicht)
@@ -16,7 +26,7 @@ Rezept entwickelt von murmeldin
 - 250 g Sojageschnetzeltes
 
 ### Bodenbelag (kann natürlich nach Belieben angepasst werden):
-- Frischkäse
+- Frischkäse vegan
 - Guacamole
 - Salsa
 - 8-12 Wraps
