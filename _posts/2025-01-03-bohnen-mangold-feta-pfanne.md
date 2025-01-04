@@ -9,9 +9,10 @@ toc: true
 ---
 
 # Bohnen-Mangold-Feta-Pfanne
-vom Landkorb
 
-Rezept für 3 Personen
+_Rezept vom Landkorb, leicht abgewandelt von Marek_
+
+Rezept für **3 Personen**
 
 ## Zutaten:
 * 500g Weiße Riesenbohnen aus der Dose

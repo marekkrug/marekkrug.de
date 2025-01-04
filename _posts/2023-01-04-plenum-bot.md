@@ -6,6 +6,7 @@ tags: [rust, cccb]     # TAG names should always be lowercase
 description: Meine Erfahrungen beim Schreiben eines Plenum-Bots für den CCCB
 toc: true
 mermaid: true
+pin: true
 # media_subpath: /assets/img/rezepte
 ---
 ## Die initiale Idee

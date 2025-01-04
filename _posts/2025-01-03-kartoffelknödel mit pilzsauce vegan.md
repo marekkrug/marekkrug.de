@@ -11,8 +11,11 @@ media_subpath: /assets/img/rezepte
 ### Chefkoch: Gekochte Kartoffelknödel Spessarter Art
 [*Dieses Rezept wurde von diesem Link inspiriert](https://www.chefkoch.de/rezepte/2428671383067403/GekochteKartoffelknoedel-Spessarter-Art.html?portionen=4-)
 
-**_Zutaten für 6 Personen_**
-## Für die Knödel
+Rezept für **6 Personen**
+
+## Zutaten
+
+### Für die Knödel
 - 1.600 g Kartoffel(n), geschält gewogen
 - 2 Ei(er)
 - 2 TL, gestr. Salz
@@ -23,7 +26,7 @@ media_subpath: /assets/img/rezepte
 - etwas Kartoffelmehl
 - etwas Petersilie, fein gehackt
 
-## Für die Pilzsauce
+### Für die Pilzsauce
 
 | Menge         | Zutat                                                                                                                   |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------- |

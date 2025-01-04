@@ -8,10 +8,13 @@ toc: true
 media_subpath: /assets/img/rezepte
 ---
 
-# Tortilla-Wraps
-für 4 Personen
-Rezept entwickelt von murmeldin
-![Ein Teller mit Tortilla-Wraps](tortilla-wraps.jpg)
+![Ein Teller mit Tortilla-Wraps](tortilla-wraps.jpg){: w="500" .right }
+
+für **4 Personen**
+
+_Rezept entwickelt von Marek_
+
+
 ## Zutaten:
 ### Rohe Zutaten
 - ~ 150-200g Bohnen (aus der Dose, abtropfgewicht)

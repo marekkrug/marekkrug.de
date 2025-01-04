@@ -8,11 +8,12 @@ toc: true
 media_subpath: /assets/img/rezepte
 ---
 
-# Schnelles Rezept für Sommerrollen
-**Für 4 Personen**
-
 ![Sommerrolle auf einem weißen Teller vor einem reich gedeckten Tisch](vegane_sommerrollen_1.jpg)
 _Endresultat_
+
+**Für 4 Personen**
+
+_Rezeptinspiration von irgendjemandem von Reddit, stark abgewandelt von Marek_
 
 ## Zutaten:
 - 15-20 Blätter Reispapier 
@@ -42,8 +43,6 @@ Als letztes heißes Wasser in einen großen, tiefen Teller geben und die Reispap
 Inspiration von diesem Reddit-Post:
 https://www.reddit.com/r/keinstresskochen/s/wBFk0Fhg6X
 
-![Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können](vegane_sommerrollen_2.jpg)
-_Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können_
+![Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können](vegane_sommerrollen_2.jpg){: w="500"}
 
-![Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können, von einem niedrigeren Winkel fotografiert](vegane_sommerrollen_3.jpg)
-_Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können, von einem niedrigeren Winkel fotografiert_
+![Sehr viele Zutaten auf einem Holztisch in der Küche, die alle zu Sommerrollen verarbeitet werden können, von einem niedrigeren Winkel fotografiert](vegane_sommerrollen_3.jpg){: w="500" }

@@ -8,7 +8,9 @@ toc: true
 # media_subpath: /assets/img/rezepte
 ---
 # Crêpes Glutenfrei
-Rezept von Opa Günter
+
+_Rezept von Opa Günter_
+
 
 ## Zutaten:
 ### Grundmischung (250g)

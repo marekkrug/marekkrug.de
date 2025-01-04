@@ -10,7 +10,7 @@ toc: true
 
 
 # Cashew Mozzarella
-Rezept von Surena
+_Rezept von Surena_
 
 ## Zutaten:
 * 100g Cashewkerne/-bruch
