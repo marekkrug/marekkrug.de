@@ -38,7 +38,7 @@ Der Bot erstellt jedes Mal, wenn `pad_ins_wiki()` aufgerufen wurde und nachdem e
 
 ### E-Mail
 
-Die Mitglieder des Clubs sollten ja, wie vorhin beschrieben, kurz vor und kurz nach dem Plenum eine E-Mail bekommen. Dazu erstellten wir eine eigene Mailadresse, die wir dem internen Verteiler hinzufügten. Wir nutzten die crate `lettre`, mit der wir dafür sorgten, dass die Mails immer so abgeschickt wurden, dass als Erstes eine Erinnerungsmail mit _"In 3 Tagen ist Plenum"_ abgeschickt wurde, dann _"in 1 Tag ist Plenum"_ und dann einen Tag nach dem Plenum _"Hier ist das Plenumspad:"_. Dabei war uns wichtig, dass immer auf die erste der drei Mails geantwortet wurde, damit man die Mails als zusammenhängenden Thread im jeweiligen E-Mail-Client hatte.
+Die Mitglieder des Clubs sollten ja, wie vorhin beschrieben, kurz vor und kurz nach dem Plenum eine E-Mail bekommen. Dazu erstellten wir eine eigene Mailadresse, die wir dem internen Verteiler hinzufügten. Wir nutzten die crate `lettre`, mit der wir dafür sorgten, dass die Mails immer so abgeschickt wurden, dass als Erstes eine Erinnerungsmail mit _"In 3 Tagen ist Plenum"_ abgeschickt wurde, dann _"in 1 Tag ist Plenum"_ und dann einen Tag nach dem Plenum _"Hier ist das Plenumspad:"_. Zur besseren Übersichtlichkeit war es uns dabei aber wichtig, dass immer auf die erste der drei Mails geantwortet wurde, damit man die Mails als zusammenhängenden Thread im jeweiligen E-Mail-Client hatte.
 
 ### Der Key Value Store
 
@@ -48,6 +48,8 @@ Wir wollten logischerweise keine Passwörter für E-Mail, MediaWiki und ähnlich
 - Mit `Optional` kann man Werte festlegen, die, wenn sie nicht angegeben werden, keine Fehler erzeugen, wie die `message_id`s der letzten E-Mails, die z.B. beim ersten Start natürlich nicht existieren sollen.  
 - Mit `Generated` wird immer ein Generator angegeben, der bei nicht vorhandenen Datenbankwerten einfach einen neuen Wert generiert, wie z.B. die neuen Padlinks für Hedgedoc.
 - Mit `Silent` werden Werte definiert, die nicht im Terminal beim bearbeiten der Config angezeigt werden.
+
+
 Damit können wir für alle einzelnen Dienste Passwörter und andere Konfigurationen abspeichern. Dazu fügten wir ebenfalls ein Command Line Interface (CLI) ein, das man mit einem `-c` am Ende aufrufen kann, um die Config zu ändern.
 
 ### Matrix
@@ -91,4 +93,8 @@ An diesem Tag gibt es wieder zwei Möglichkeiten:
 
 ## Der aktuelle Stand
 
-Bisher ist der Bot noch in Arbeit. Die Grundlogik ist zwar schon fertig, aber es fehlen noch Langzeittests um zu schauen, ob alle Reminder funktionieren. To be continued...
+Und, was ist mein Fazit? Wäre es einfacher gewesen, das Ganze in Python zu schreiben? Ja, ich denke schon. Aber ich habe dieses Projekt nicht nur aus praktischen Gründen gemacht, sondern auch, um meine Rust-Kenntnisse zu verbessern. Mit insgesamt ~2800 Zeilen Code, verteilt auf 19 Dateien, ist das Projekt vergleichsweise schon ziemlich explodiert.
+
+Im Moment ist der Bot noch in Arbeit. Die Grundlogik ist zwar schon fertig, aber es fehlen noch Langzeittests, um zu sehen, ob alle Reminder funktionieren.
+
+Also: To be continued...
