@@ -7,7 +7,7 @@ description: Meine Erfahrungen beim Schreiben eines Plenum-Bots für den CCCB
 toc: true
 mermaid: true
 pin: true
-# media_subpath: /assets/img/rezepte
+media_subpath: /assets/img/blog
 ---
 ## Die initiale Idee
 
@@ -20,6 +20,9 @@ Damit werden am Ende alle Plena in Textform im Mediawiki festgehalten - so, dass
 *Yrrsinn* und ich übernahmen bei den Plena immer den Job, diese vorher anzukündigen und Pad-Templates herumzuschicken, die wir nach dem Plenum im Mediawiki veröffentlichten und eine Mail mit dem neuen Link herumschickten.
 
 Dieser Prozess war, wie man sich vielleicht vorstellen kann, zwar in ein paar Minuten erledigt, aber wurde oft von uns vergessen. Außerdem war er potentiell vergleichsweise einfach automatisierbar. Also plante ich, den Plenums-Bot ins Leben zu rufen 
+
+![Das Plenum-Bot Projekt in VSCode](plenum_bot_projekt_in_vscode.png)
+_Das Plenum-Bot Projekt in VSCode_
 
 ## Wie umsetzen?
 
@@ -51,6 +54,9 @@ Wir wollten logischerweise keine Passwörter für E-Mail, MediaWiki und ähnlich
 
 
 Damit können wir für alle einzelnen Dienste Passwörter und andere Konfigurationen abspeichern. Dazu fügten wir ebenfalls ein Command Line Interface (CLI) ein, das man mit einem `-c` am Ende aufrufen kann, um die Config zu ändern.
+
+![Der Key Value Store in Benutzung](der_key_value_store_in_aktion.png)
+_Der Key Value Store in Benutzung_
 
 ### Matrix
 
