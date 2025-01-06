@@ -104,3 +104,11 @@ Und, was ist mein Fazit? Wäre es einfacher gewesen, das Ganze in Python zu schr
 Im Moment ist der Bot noch in Arbeit. Die Grundlogik ist zwar schon fertig, aber es fehlen noch Langzeittests, um zu sehen, ob alle Reminder funktionieren.
 
 Also: To be continued...
+
+<script data-goatcounter="https://marekkrug-gc.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+## <i class="fa-solid fa-code-compare"></i>  Source Code des Plenum-Bots
+Der Source Code ist auf dem Forjeo des Chaos Computer Club Berlin unter diesem Link zu finden:
+
+[git.berlin.ccc.de/murmeldin/plenum-bot](https://git.berlin.ccc.de/murmeldin/plenum-bot)
