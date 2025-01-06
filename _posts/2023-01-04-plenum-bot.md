@@ -105,7 +105,7 @@ Im Moment ist der Bot noch in Arbeit. Die Grundlogik ist zwar schon fertig, aber
 
 Also: To be continued...
 
-<script data-goatcounter="https://marekkrug-gc.goatcounter.com/count"
+<script data-goatcounter="https://marekkrug.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
 ## <i class="fa-solid fa-code-compare"></i>  Source Code des Plenum-Bots
