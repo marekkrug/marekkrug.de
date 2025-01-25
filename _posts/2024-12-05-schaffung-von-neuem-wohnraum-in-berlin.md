@@ -10,7 +10,7 @@ media_subpath: /assets/img/blog/wohnraum-referat
 ---
 
 **Referatsthema:**
-# „Schaffung von neuem Wohnraum in Berlin: Herausforderungen und Perspektiven“
+## „Schaffung von neuem Wohnraum in Berlin: Herausforderungen und Perspektiven“
 
 Die Wohnungssituation in Berlin verschlechtert sich seit Jahren und es wird immer schwieriger, eine Wohnung zu finden. Doch woran liegt das? Und wie kann die Politik den stetig steigenden Mieten aktiv entgegenwirken? In diesem Datengarten-Talk geht es um die Auslöser der Wohnungsknappheit in Berlin und welche Ideen und Möglichkeiten es gibt, gegen den Wohnungsmangel vorzugehen.
 

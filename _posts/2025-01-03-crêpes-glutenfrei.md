@@ -7,7 +7,6 @@ description: schnelle glutenfreie Pfannkuchen mit Grundmischung zum selber mixen
 toc: true
 # media_subpath: /assets/img/rezepte
 ---
-# Crêpes Glutenfrei
 
 _Rezept von Opa Günter_
 

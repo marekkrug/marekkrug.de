@@ -8,13 +8,11 @@ toc: true
 # media_subpath: /assets/img/rezepte
 ---
 
-# Bohnen-Mangold-Feta-Pfanne
-
 _Rezept vom Landkorb, leicht abgewandelt von Marek_
 
 Rezept für **3 Personen**
 
-## Zutaten:
+### Zutaten:
 * 500g Weiße Riesenbohnen aus der Dose
 * 500g Mangold (kann zur Not durch Spinat oder Pak Choi ersetzt werden)
 * 200ml Gemüsebrühe
@@ -29,7 +27,7 @@ Rezept für **3 Personen**
 * Olivenöl
 * Pfeffer
 
-## Zubereitung:
+### Zubereitung:
 1) Den Fetakäse in Würfel schneiden.
 
 2) Bohnen abgießen und abspühlen. Mangold putzen und klein schneiden. 2 Zehen Knoblauch pressen. Oliven halbieren.

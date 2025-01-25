@@ -8,8 +8,6 @@ toc: true
 # media_subpath: /assets/img/rezepte
 ---
 
-
-# Cashew Mozzarella
 _Rezept von Surena_
 
 ## Zutaten:

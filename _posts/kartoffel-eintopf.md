@@ -1,4 +1,7 @@
-# Zutaten für 25-30 Personen
+_Rezept für 25-30 Personen_
+
+## Zutaten
+
 Grundzutaten
 - 4,5 kg Kartoffeln
 - 1 kg Porree
@@ -14,7 +17,9 @@ Gewürze
 - Muskatnuss
 - zum Verfeinern ein halbes Päckchen veganes Zwiebelschmalz
 - Sojasauce 
-# Zubereitung
+
+## Zubereitung
+
 - Den Lauch in kleine Stücke schneiden und anschließend in einer Pfanne mit Rapsöl anbraten
 - Anschließend die Möhren in kleine Stücke schneiden und für ein paar Minuten dazugeben.
 - Dann die Kartoffeln schälen und ebenfalls in kleine Stücke schneiden

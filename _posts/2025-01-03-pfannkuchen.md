@@ -8,9 +8,7 @@ toc: true
 # media_subpath: /assets/img/rezepte
 ---
 
-# Pfannkuchen
-
-5 Pfannkuchen
+Rezept für 5 Pfannkuchen
 
 ## Zutaten
 

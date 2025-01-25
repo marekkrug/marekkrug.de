@@ -7,7 +7,6 @@ description: Mein Referat vom 15.01.2025
 toc: true
 pin: true
 ---
-# Handout Lobbyismus
 _Marek Krug, 15.01.2024_
 
 ### Was ist Lobbyismus? Definition

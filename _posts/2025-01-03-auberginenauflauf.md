@@ -8,8 +8,7 @@ toc: true
 media_subpath: /assets/img/rezepte
 ---
 
-# Auberginenauflauf
-Für 4 Personen
+Rezepf für 4 Personen
 ![Eine Auflaufform mit Auberginenauflauf auf einem Tisch, auf dem sich ebenfalls verschiedene Teller mit dem Gericht befinden](auberginenauflauf_1.jpg){: w="500" .right }
 ## Zutaten:
 - 4 mittlere Auberginen
