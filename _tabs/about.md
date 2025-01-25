@@ -1,11 +1,9 @@
 ---
 # the default layout is 'page'
+title: About, Impressum und Datenschutz
 icon: fas fa-info-circle
 order: 4
 ---
-
-# About, Impressum und Datenschutz
-
 ## About
 
 > English:
