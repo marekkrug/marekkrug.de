@@ -1,9 +1,9 @@
 ---
-title: Wie man einen Plenums-Bot schreibt - Und warum Rust vielleicht nicht immer die beste Wahl ist
+title: Wie man einen Plenum-Bot für den CCCB schreibt
 date: 2025-01-16 12:00:00 +0100
 categories: [blog, programmieren]
 tags: [rust, cccb]     # TAG names should always be lowercase
-description: Meine Erfahrungen beim Schreiben eines Plenum-Bots für den CCCB
+description: Und warum Rust vielleicht nicht immer die beste Wahl ist
 toc: true
 mermaid: true
 pin: true

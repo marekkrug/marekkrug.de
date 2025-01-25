@@ -1,5 +1,5 @@
 ---
-title: „Schaffung von neuem Wohnraum in Berlin - Herausforderungen und Perspektiven - Referat
+title: Schaffung von neuem Wohnraum in Berlin
 date: 2024-12-05 12:00:00 +0100
 categories: [schule, geografie]
 tags: [wohnen, berlin, referat, handout]     # TAG names should always be lowercase
