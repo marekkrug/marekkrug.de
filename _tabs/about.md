@@ -6,19 +6,23 @@ order: 4
 ---
 ## About
 
-> English:
-
-Hey, I am Marek Krug, a Student from Berlin, working towards my Abitur 📚.  
-I am currently active in the Chaos Computer Club Berlin 👨‍💻🔌 and at Volt Berlin 🐻💜.  
-I like programming in Rust 🦀 and Python 🐍 and I like bouldering 🧗🏼.  
-I am also a casual NixOS ❄️ User and Linux and Open Source Enthusiast.  
-
 > German:
 
 Moin, ich bin Marek Krug, Schüler aus Berlin, ich arbeite gerade meinem Abitur entgegen 📚.  
-Ich bin besonders aktiv im Chaos Computer Club Berlin 👨‍💻🔌 und bei Volt Berlin 🐻💜.  
+Auf dieser Website findet ihr Blogs übers Programmieren, Präsentationen von mir und ein paar meiner Lieblingsrezepte.  
+
+Ich bin besonders aktiv im Chaos Computer Club Berlin 👨‍💻 und bei Volt Berlin 💜.  
 Am liebsten programmiere ich in Rust 🦀 und Python 🐍 und gehe gerne bouldern 🧗🏼.  
 ❄️ Ich nutze NixOS als Hauptbetriebssystem und bin ein Linux 🐧 und Open Source Enthusiast.
+
+> English:
+
+Hey, I am Marek Krug, a Student from Berlin, working towards my Abitur 📚.  
+On this website, you'll find my blogs about programming, presentations and my favorite recipes.  
+
+I am currently active in the Chaos Computer Club Berlin 👨‍💻 and at Volt Berlin 💜.  
+I like programming in Rust 🦀 and Python 🐍 and I like bouldering 🧗🏼.  
+I am also a casual NixOS ❄️ User and Linux and Open Source Enthusiast.  
 
 Den Source Code dieser Website kannst du dir gerne bei GitHub anschauen:
 
