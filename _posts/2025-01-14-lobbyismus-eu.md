@@ -1,6 +1,6 @@
 ---
 title: Lobbyismus in der EU - Referat
-date: 2025-01-04 12:00:00 +0100
+date: 2025-01-14 12:00:00 +0100
 categories: [schule, pw]
 tags: [lobbyismus, eu, referat, handout]     # TAG names should always be lowercase
 description: Mein Referat vom 15.01.2025

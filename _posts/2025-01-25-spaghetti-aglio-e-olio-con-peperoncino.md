@@ -1,6 +1,6 @@
 ---
 title: Spaghetti aglio e olio con peperoncino
-date: 2025-01-03 12:00:00 +0100
+date: 2025-01-25 12:00:00 +0100
 categories: [rezepte, herzhaftes]
 tags: [mittagessen, vegan, einfach+schnell]     # TAG names should always be lowercase
 description: Spaghetti mit Knoblauch, Olivenöl, Chili und Petersilie 
