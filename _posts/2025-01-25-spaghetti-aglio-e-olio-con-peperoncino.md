@@ -7,8 +7,6 @@ description: Spaghetti mit Knoblauch, Olivenöl, Chili und Petersilie
 toc: true
 media_subpath: /assets/img/rezepte
 ---
-
-# Spaghetti aglio e olio con peperoncino
 Rezept inspiriert aus dem Internet und ausformuliert von [Martin Häcker](https://häcker.net/)
 
 ![Eine schüssel mit Spaghetti aglio e olio](Spaghetti_agli_e_olio_2.jpeg)
