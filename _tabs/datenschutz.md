@@ -26,7 +26,7 @@ Wenn du meine Website besuchst, werden einige technische Daten verarbeitet, z. B
 **Wichtig:**  
 - Ich nutze **GoatCounter**, ein Tool für anonyme Statistiken.  
 - Es werden **keine IP-Adressen**, Cookies oder vollständige Nutzungsprofile gespeichert.  
-- Daten wie Bildschirmgröße, Sprache und Referrer werden anonymisiert verarbeitet.  
+- Daten wie Bildschirmgröße, Sprache und Referrer werden anonymisiert verarbeitet und können daher nicht auf einzelne Personen zurückverfolgt werden.  
 
 **Rechtsgrundlage:**  
 Berechtigtes Interesse gemäß Art. 6 Abs. 1 lit. f DSGVO.  
@@ -75,7 +75,7 @@ Schreib mir einfach eine E-Mail, wenn du Fragen hast: **website@marekkrug.de**
 ---
 
 ## Cookies  
-Meine Website verwendet keine Cookies. Tools wie GoatCounter speichern Daten ohne Cookies.  
+Ich mag keine Cookie-Banner. Deshalb verwendet meine Website keine Cookies.  
 
 ---
 

@@ -59,3 +59,8 @@ Diese Website wird ausschließlich zu privaten und nicht kommerziellen Zwecken b
 ## **Kontakt und Datenschutz**  
 
 Weitere Informationen zur Datenverarbeitung findest du in meiner [Datenschutzerklärung](https://marekkrug.de/datenschutz/).  
+
+---
+
+## Änderungen  
+Dieses Impressum kann sich ändern. Letztes Update: 25. Januar 2025
