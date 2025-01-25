@@ -39,7 +39,7 @@ Eisenzahnstr. 38
 10709 Berlin  
 Deutschland  
 
-**E-Mail:** website@marekkrug.de  
+**E-Mail:** website [AT] marekkrug.de  
 
 ---
 
@@ -91,7 +91,7 @@ Dieses Impressum kann sich ändern. Letztes Update: 25. Januar 2025
 
 ## Wer ich bin  
 Hi, ich bin Marek Krug und betreibe diese Website rein als Hobby. Du erreichst mich unter:  
-**E-Mail:** website@marekkrug.de  
+**E-Mail:** website [AT] marekkrug.de  
 
 ---
 
