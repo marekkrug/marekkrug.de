@@ -44,7 +44,7 @@ _Grafik: ausgewählte indizierte Berliner Indikatoren im Vergleich 2013 bis 2022
 ### Preisentwicklung
 - Es werden zwar neue Wohnungen gebaut, aber die Mietpreise sind wegen Spekulationen und immer weiter steigenden Baukosten oft so hoch, dass sich kaum jemand diese leisten kann: Für Berlin liegt der durchschnittliche Preis im 2. Quartal 2024 bei einer neu vermieteten Wohnung bei 18,69 €/m²
 
-<a href="https://de.statista.com/statistik/daten/studie/1885/umfrage/mietpreise-in-den-groessten-staedten-deutschlands/" rel="nofollow"><img src="https://de.statista.com/graphic/1/1885/mietpreise-in-den-groessten-staedten-deutschlands.jpg" alt="Statistik: Städte mit den höchsten Mietpreisen für Wohnungen in Deutschland im 3. Quartal 2024 (in Euro pro Quadratmeter)  | Statista" style="width: 100%; height: auto !important; max-width:1000px;-ms-interpolation-mode: bicubic;"/></a><br /></a>
+<a href="https://de.statista.com/statistik/daten/studie/1885/umfrage/mietpreise-in-den-groessten-staedten-deutschlands/" rel="nofollow"><img src="https://de.statista.com/graphic/1/1885/mietpreise-in-den-groessten-staedten-deutschlands.jpg" alt="Statistik: Städte mit den höchsten Mietpreisen für Wohnungen in Deutschland im 3. Quartal 2024 (in Euro pro Quadratmeter)  | Statista" style="width: 100%; height: auto !important; max-width:1000px;-ms-interpolation-mode: bicubic;"/></a>
 
 _Grafik: Die Angebotspreise steigen deutlich stärker als die Haushaltseinkommen der Berliner [5]_
 
@@ -108,10 +108,15 @@ Digitales Kataster für Baulücken
 - Aber das kann verschnellert werden: Digitalisierung, mehr Personal und dadurch schnellere Genehmigungen und Bau
 - Auch ein Problem bisher: Wenn eine Nachfrage besteht, muss man auch versuchen, dieser gerecht zu werden. Man braucht ja generell vielleicht so 3–5 Jahre [1], um ein Haus von der Planung zum Einzug zu bringen. Deshalb wäre es sehr wichtig gewesen und ist immer noch super wichtig, dass man vorausschauend für die Nachfrage in 3–5 Jahren baut und nicht für die aktuelle. Das ist meiner Meinung nach immer noch ein großes Problem:
 	- „aus der aktuellen Bevölkerungsprognose wird ein Bevölkerungswachstum bis 2040 in Höhe von 5,0 % prognostiziert.“ [4.2]
+
 ## Abschließende Frage:
+
 ### „Was denkt ihr, wäre das beste Mittel, um die Wohnungsnot in Berlin zu lösen?“
+
 ---
+
 ## Literaturverzeichnis
+
 [1] **Eine Mietensteuer in Berlin könnte 100 000 Wohnungen bezahlbar machen**, Deutsches Institut für Wirtschaftsforschung, 2021: [diw.de](https://www.diw.de/de/diw_01.c.828267.de/publikationen/diw_aktuell/2021_0075/eine_mietensteuer_in_berlin_koennte_100_000_wohnungen_bezahlbar_machen.html)
 
 [2] **Berliner Wohnungsmarkt: Nicht nur Arme finden nichts**, nd, 2023: [nd-aktuell.de](https://www.nd-aktuell.de/artikel/1172590.mietenwahnsinn-berliner-wohnungsmarkt-nicht-nur-arme-finden-nichts.html)
