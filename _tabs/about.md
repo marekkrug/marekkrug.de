@@ -2,23 +2,24 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
-toc: true
 ---
 
-# About Me // Über Mich
+# About, Impressum und Datenschutz
+
+## About
 
 > English:
 
-Hey, I am Marek Krug, a Student from Berlin, working towards my Abitur 📚.
-I am currently active in the Chaos Computer Club Berlin 👨‍💻🔌 and at Volt Berlin 🐻💜.
-I like programming in Rust 🦀 and Python 🐍 and I like bouldering 🧗🏼. I am also a casual NixOS ❄️ User and Linux and Open Source Enthusiast.
+Hey, I am Marek Krug, a Student from Berlin, working towards my Abitur 📚.  
+I am currently active in the Chaos Computer Club Berlin 👨‍💻🔌 and at Volt Berlin 🐻💜.  
+I like programming in Rust 🦀 and Python 🐍 and I like bouldering 🧗🏼.  
+I am also a casual NixOS ❄️ User and Linux and Open Source Enthusiast.  
 
 > German:
 
-Moin, ich bin Marek Krug, Schüler aus Berlin, ich arbeite gerade meinem Abitur entgegen 📚.
-Ich bin besonders aktiv im Chaos Computer Club Berlin 👨‍💻🔌 und bei Volt Berlin 🐻💜.
-Am liebsten programmiere ich in Rust 🦀 und Python 🐍.
-🧗🏼Ich gehe gerne bouldern.
+Moin, ich bin Marek Krug, Schüler aus Berlin, ich arbeite gerade meinem Abitur entgegen 📚.  
+Ich bin besonders aktiv im Chaos Computer Club Berlin 👨‍💻🔌 und bei Volt Berlin 🐻💜.  
+Am liebsten programmiere ich in Rust 🦀 und Python 🐍 und gehe gerne bouldern 🧗🏼.  
 ❄️ Ich nutze NixOS als Hauptbetriebssystem und bin ein Linux 🐧 und Open Source Enthusiast.
 
 Den Source Code dieser Website kannst du dir gerne bei GitHub anschauen:
@@ -27,9 +28,9 @@ Den Source Code dieser Website kannst du dir gerne bei GitHub anschauen:
 
 ---
 
-# Impressum  
+## Impressum  
 
-## Angaben gemäß § 5 TMG  
+### Angaben gemäß § 5 TMG  
 
 **Marek Krug**  
 Eisenzahnstr. 38  
@@ -40,7 +41,7 @@ Deutschland
 
 ---
 
-## Haftung für Inhalte  
+### Haftung für Inhalte  
 
 Ich erstelle die Inhalte dieser Website mit größter Sorgfalt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehme ich jedoch keine Gewähr.  
 
@@ -50,7 +51,7 @@ Eine Verpflichtung zur Entfernung oder Sperrung der Nutzung von Informationen na
 
 ---
 
-## Haftung für Links  
+### Haftung für Links  
 
 Meine Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.  
 
@@ -58,11 +59,11 @@ Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsve
 
 ---
 
-## Urheberrecht  
+### Urheberrecht  
 
 Die Inhalte und Werke auf dieser Website stehen, soweit nicht anders angegeben, unter der Lizenz **Creative Commons Namensnennung-Weitergabe unter gleichen Bedingungen 4.0 International (CC BY-SA 4.0)**.  
 
-### Zusammenfassung der Lizenz  
+#### Zusammenfassung der Lizenz  
 - **Teilen:** Du darfst das Material in beliebigem Format oder Medium vervielfältigen und verbreiten.  
 - **Bearbeiten:** Du darfst das Material remixen, verändern und darauf aufbauen, auch kommerziell.  
 - **Bedingungen:**  
@@ -73,24 +74,24 @@ Details zur Lizenz findest du unter: [https://creativecommons.org/licenses/by-sa
 
 ---
 
-## Privater Betrieb der Website  
+### Privater Betrieb der Website  
 
 Diese Website wird ausschließlich zu privaten und nicht kommerziellen Zwecken betrieben.  
 
 ---
 
-## Kontakt und Datenschutz  
+### Kontakt und Datenschutz  
 
 Weitere Informationen zur Datenverarbeitung findest du in meiner [Datenschutzerklärung](https://marekkrug.de/datenschutz/).  
 
 ---
 
-## Änderungen  
+### Änderungen  
 Dieses Impressum kann sich ändern. Letztes Update: 25. Januar 2025
 
 ---
 
-# Datenschutzerklärung  
+## Datenschutzerklärung  
 
 ## Wer ich bin  
 Hi, ich bin Marek Krug und betreibe diese Website rein als Hobby. Du erreichst mich unter:  
@@ -98,9 +99,9 @@ Hi, ich bin Marek Krug und betreibe diese Website rein als Hobby. Du erreichst m
 
 ---
 
-## Welche Daten ich sammle und warum  
+### Welche Daten ich sammle und warum  
 
-### Website-Statistiken  
+#### Website-Statistiken  
 Wenn du meine Website besuchst, werden einige technische Daten verarbeitet, z. B.:  
 - Dein Browser (z. B. Chrome, Firefox)  
 - Dein Land  
@@ -120,7 +121,7 @@ Berechtigtes Interesse gemäß Art. 6 Abs. 1 lit. f DSGVO.
 
 ---
 
-### Kommentare  
+#### Kommentare  
 Du kannst Kommentare zu meinen Beiträgen über **GitHub Utterances** hinterlassen. Dafür wird dein **GitHub-Nutzername** angezeigt, wenn du eingeloggt bist.  
 **Hinweis:**  
 - Kommentare sind freiwillig.  
@@ -132,7 +133,7 @@ Deine freiwillige Zustimmung gemäß Art. 6 Abs. 1 lit. a DSGVO, wenn du dich an
 
 ---
 
-## Hosting und Drittanbieter  
+### Hosting und Drittanbieter  
 - Die Website wird über **GitHub Pages** gehostet.  
 - Ich nutze das **Chirpy Theme** mit Jekyll, ein statisches Seitengenerator-Framework.  
 - Für Statistiken setze ich **GoatCounter** ein.  
@@ -144,7 +145,7 @@ Die Dienste von GitHub Pages und GoatCounter können Daten in die USA übermitte
 
 ---
 
-## Deine Rechte  
+### Deine Rechte  
 Du hast das Recht:  
 - Zu erfahren, welche Daten ich über dich habe  
 - Falsche Daten korrigieren zu lassen  
@@ -157,17 +158,17 @@ Schreib mir einfach eine E-Mail, wenn du Fragen hast: **website@marekkrug.de**
 
 ---
 
-## Sicherheit  
+### Sicherheit  
 - Deine Daten werden über verschlüsselte Verbindungen (**TLS**) übertragen.  
 - Ich gebe keine Daten an Dritte weiter.  
 
 ---
 
-## Cookies  
+### Cookies  
 Ich mag keine Cookie-Banner. Deshalb verwendet meine Website keine Cookies.  
 
 ---
 
-## Änderungen  
+### Änderungen  
 Diese Datenschutzerklärung kann sich ändern. Letztes Update: 25. Januar 2025
 
