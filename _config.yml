@@ -23,7 +23,7 @@ description: >- # used by seo meta and the atom feed
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: ""
+url: "https://marekkrug.de"
 
 github:
   username: marekkrug # change to your GitHub username
@@ -76,6 +76,9 @@ analytics:
 # Page views settings
 pageviews:
   provider: goatcounter # now only supports 'goatcounter'
+
+plugins:
+  - jekyll-sitemap
 
 # Prefer color scheme setting.
 #
@@ -150,7 +153,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: ""
+baseurl: "https://marekkrug.de"
 
 # ------------ The following options are not recommended to be modified ------------------
 
