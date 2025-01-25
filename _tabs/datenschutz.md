@@ -1,6 +1,6 @@
 ---
 # the default layout is 'page'
-icon: fas fa-info-circle
+icon: fa-solid fa-section
 order: 5
 ---
 # Datenschutzerklärung  
