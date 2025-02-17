@@ -2,7 +2,7 @@
 title: Französischer Zahlenkonverter
 date: 2025-02-17 09:45:00 +0100
 categories: [blog, programmieren]
-tags: [random, mini-scripts, französisch, schule]     # TAG names should always be lowercase
+tags: [random-projects, mini-scripts, französisch, schule, educational]     # TAG names should always be lowercase
 description: Ein einfacher Zahlenkonverter zum umrechnen französischer Zahlen
 ---
 
@@ -25,7 +25,6 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       flex-direction: column;
       gap: 1rem;
     }
-    
     .result {
       padding: 1rem;
       border-radius: 4px;
@@ -39,11 +38,9 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       word-wrap: break-word;
       word-break: break-word;
     }
-    
     .input-group {
       margin-top: 0.5rem;
     }
-    
     input {
       background-color: rgba(100,100,100,0.5);
       width: 100%;
@@ -52,13 +49,11 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       border-radius: 4px;
       font-size: clamp(1rem, 3vw, 1.5rem);
     }
-    
     .tooltip {
       position: relative;
       display: inline-block;
       cursor: help;
     }
-
     .tooltip-text {
       visibility: hidden;
       position: absolute;
@@ -76,23 +71,19 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       opacity: 0;
       transition: opacity 0.3s;
     }
-
     .tooltip:hover .tooltip-text {
       visibility: visible;
       opacity: 1;
     }
-
     .number-part {
       padding: 2px 4px;
       border-radius: 3px;
     }
-
     .unit { color: #4CAF50; }         /* Green for basic numbers */
     .tens { color: #2196F3; }           /* Blue for tens */
     .hundred { color: #F44336; }        /* Red for hundreds */
     .thousand { color: #9C27B0; }       /* Purple for thousands */
     .connector { color: #FF9800; }      /* Orange for connectors (et, -) */
-
     .legend {
       margin-top: 20px;
       display: flex;
@@ -100,25 +91,21 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       gap: 10px;
       font-size: 14px;
     }
-
     .legend-item {
       display: flex;
       align-items: center;
       gap: 5px;
     }
-
     .legend-color {
       width: 20px;
       height: 20px;
       border-radius: 3px;
     }
-
     @media (max-height: 600px) {
       .converter-container {
         margin: 10px auto;
         padding: 10px;
       }
-      
       .tooltip-text {
         width: 200px;
         font-size: 12px;
