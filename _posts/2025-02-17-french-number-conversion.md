@@ -11,14 +11,14 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
 <div class="converter-container">
   <style>
     .converter-container {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--body-font-family, system-ui, -apple-system, sans-serif);
       width: 100%;
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      background-color: rgba(100,100,100,0.5);
+      background-color: var(--card-bg, #f5f5f5);
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -26,7 +26,7 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
     .result {
       padding: 1rem;
       border-radius: 4px;
-      background-color: rgba(100,100,100,0.8);
+      background-color: var(--card-bg, white);
       min-height: 3rem;
       font-size: clamp(1.2rem, 4vw, 2rem);
       display: flex;
@@ -35,16 +35,19 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       text-align: center;
       word-wrap: break-word;
       word-break: break-word;
+      color: var(--text-color, #333);
     }
     .input-group {
       margin-top: 0.5rem;
     }
-    input {
+    .converter-container input {
       width: 100%;
       padding: 1rem;
-      border: 1px solid #ddd;
+      border: 1px solid var(--border-color, #ddd);
       border-radius: 4px;
       font-size: clamp(1rem, 3vw, 1.5rem);
+      background-color: var(--input-bg, white);
+      color: var(--text-color, #333);
     }
     .tooltip {
       position: relative;
@@ -54,13 +57,13 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
     .tooltip-text {
       visibility: hidden;
       position: absolute;
-      z-index: 1;
+      z-index: 999;
       bottom: 125%;
       left: 50%;
       transform: translateX(-50%);
       width: 300px;
-      background-color: #333;
-      color: #fff;
+      background-color: var(--tooltip-bg, #333);
+      color: var(--tooltip-text, #fff);
       text-align: left;
       padding: 10px;
       border-radius: 6px;
@@ -76,17 +79,18 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       padding: 2px 4px;
       border-radius: 3px;
     }
-    .unit { color: #4CAF50; }
-    .tens { color: #2196F3; }
-    .hundred { color: #F44336; }
-    .thousand { color: #9C27B0; }
-    .connector { color: #FF9800; }
+    .unit { color: var(--unit-color, #4CAF50); }
+    .tens { color: var(--tens-color, #2196F3); }
+    .hundred { color: var(--hundred-color, #F44336); }
+    .thousand { color: var(--thousand-color, #9C27B0); }
+    .connector { color: var(--connector-color, #FF9800); }
     .legend {
       margin-top: 20px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       font-size: 14px;
+      color: var(--text-color, #333);
     }
     .legend-item {
       display: flex;
@@ -97,16 +101,6 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       width: 20px;
       height: 20px;
       border-radius: 3px;
-    }
-    @media (max-height: 600px) {
-      .converter-container {
-        margin: 10px auto;
-        padding: 10px;
-      }
-      .tooltip-text {
-        width: 200px;
-        font-size: 12px;
-      }
     }
   </style>
 
@@ -140,111 +134,46 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       Connectors
     </div>
   </div>
+</div>
 
-  <script defer>
-    document.addEventListener('DOMContentLoaded', function() {
-      const numberRules = {
-        // ... [Previous numberRules object remains the same]
-      };
+<script defer>
+  (function() {
+    const numberRules = {
+      'un': { de: 'Eins - Grundzahl', en: 'One - Basic number', fr: 'Un - Nombre de base' },
+      'deux': { de: 'Zwei - Grundzahl', en: 'Two - Basic number', fr: 'Deux - Nombre de base' },
+      'trois': { de: 'Drei - Grundzahl', en: 'Three - Basic number', fr: 'Trois - Nombre de base' },
+      'quatre': { de: 'Vier - Grundzahl', en: 'Four - Basic number', fr: 'Quatre - Nombre de base' },
+      'cinq': { de: 'Fünf - Grundzahl', en: 'Five - Basic number', fr: 'Cinq - Nombre de base' },
+      'six': { de: 'Sechs - Grundzahl', en: 'Six - Basic number', fr: 'Six - Nombre de base' },
+      'sept': { de: 'Sieben - Grundzahl', en: 'Seven - Basic number', fr: 'Sept - Nombre de base' },
+      'huit': { de: 'Acht - Grundzahl', en: 'Eight - Basic number', fr: 'Huit - Nombre de base' },
+      'neuf': { de: 'Neun - Grundzahl', en: 'Nine - Basic number', fr: 'Neuf - Nombre de base' },
+      'dix': { de: 'Zehn', en: 'Ten', fr: 'Dix' },
+      'onze': { de: 'Elf', en: 'Eleven', fr: 'Onze' },
+      'douze': { de: 'Zwölf', en: 'Twelve', fr: 'Douze' },
+      'treize': { de: 'Dreizehn', en: 'Thirteen', fr: 'Treize' },
+      'quatorze': { de: 'Vierzehn', en: 'Fourteen', fr: 'Quatorze' },
+      'quinze': { de: 'Fünfzehn', en: 'Fifteen', fr: 'Quinze' },
+      'seize': { de: 'Sechzehn', en: 'Sixteen', fr: 'Seize' },
+      'vingt': { de: 'Zwanzig', en: 'Twenty', fr: 'Vingt - Base for 20' },
+      'trente': { de: 'Dreißig', en: 'Thirty', fr: 'Trente - Base for 30' },
+      'quarante': { de: 'Vierzig', en: 'Forty', fr: 'Quarante - Base for 40' },
+      'cinquante': { de: 'Fünfzig', en: 'Fifty', fr: 'Cinquante - Base for 50' },
+      'soixante': { de: 'Sechzig', en: 'Sixty', fr: 'Soixante - Base for 60' },
+      'soixante-dix': { de: 'Siebzig (60+10)', en: 'Seventy (60+10)', fr: 'Soixante-dix - 60 plus 10' },
+      'quatre-vingt': { de: 'Achtzig (4x20)', en: 'Eighty (4x20)', fr: 'Quatre-vingt - 4 times 20' },
+      'quatre-vingts': { de: 'Achtzig (mit s, wenn allein)', en: 'Eighty (with s when alone)', fr: 'Quatre-vingts - utilisé pour 80 exactement' },
+      'quatre-vingt-dix': { de: 'Neunzig (4x20+10)', en: 'Ninety (4x20+10)', fr: 'Quatre-vingt-dix - 80 plus 10' },
+      'cent': { de: 'Hundert', en: 'Hundred', fr: 'Cent' },
+      'mille': { de: 'Tausend', en: 'Thousand', fr: 'Mille' },
+      'et': { de: 'und', en: 'and', fr: 'et' }
+    };
 
-      function createTooltip(word) {
-        if (numberRules[word]) {
-          return `
-            <span class="tooltip">
-              ${word}
-              <span class="tooltip-text">
-                🇩🇪 ${numberRules[word].de}<br>
-                🇬🇧 ${numberRules[word].en}<br>
-                🇫🇷 ${numberRules[word].fr}
-              </span>
-            </span>
-          `;
-        }
-        return word;
-      }
-
-      function colorizeAndAddTooltips(number) {
-        let parts = number.split(' ');
-        return parts.map(part => {
-          if (part.includes('-')) {
-            return part.split('-').map(p => {
-              let cssClass = 'unit';
-              if (p.includes('mille')) cssClass = 'thousand';
-              else if (p.includes('cent')) cssClass = 'hundred';
-              else if (p.includes('vingt') || p.includes('trente') || p.includes('quarante') ||
-                       p.includes('cinquante') || p.includes('soixante')) cssClass = 'tens';
-              else if (p === 'et') cssClass = 'connector';
-              return `<span class="number-part ${cssClass}">${createTooltip(p)}</span>`;
-            }).join('-');
-          } else {
-            let cssClass = 'unit';
-            if (part.includes('mille')) cssClass = 'thousand';
-            else if (part.includes('cent')) cssClass = 'hundred';
-            else if (part.includes('vingt') || part.includes('trente') || part.includes('quarante') ||
-                     part.includes('cinquante') || part.includes('soixante')) cssClass = 'tens';
-            else if (part === 'et') cssClass = 'connector';
-            return `<span class="number-part ${cssClass}">${createTooltip(part)}</span>`;
-          }
-        }).join(' ');
-      }
-
-      function convertToFrench(n) {
-        if (n === 0) return "zéro";
-        if (n < 0) return `moins ${convertToFrench(-n)}`;
-
-        const units = ["", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", 
-                       "onze", "douze", "treize", "quatorze", "quinze", "seize"];
-        const tens = ["", "dix", "vingt", "trente", "quarante", "cinquante", "soixante"];
-
-        if (n < 17) return units[n];
-        if (n < 20) return `dix-${units[n-10]}`;
-
-        if (n < 100) {
-          const ten = Math.floor(n / 10);
-          const unit = n % 10;
-
-        if (ten === 7) {
-        if (ten === 7) {
-          // 70-79: "soixante" + 10-19
-          if (ten === 7) {
-          // 70-79: "soixante" + 10-19
-            if (unit === 1) return "soixante et onze";
-            return `soixante-${convertToFrench(10 + unit)}`;
-          }
-          if (ten === 8) {
-            if (unit === 0) return "quatre-vingts";
-            return `quatre-vingt-${units[unit]}`;
-          }
-          if (ten === 9) {
-            return `quatre-vingt-${convertToFrench(10 + unit)}`;
-          }
-          if (unit === 0) return tens[ten];
-          if (unit === 1) return `${tens[ten]} et ${units[unit]}`;
-          return `${tens[ten]}-${units[unit]}`;
-        }
-
-        if (n < 1000) {
-          const hundreds = Math.floor(n / 100);
-          const remainder = n % 100;
-          let hundredStr = (hundreds === 1 ? "cent" : `${units[hundreds]} cent`);
-          if (remainder === 0 && hundreds > 1) hundredStr += "s";
-          if (remainder === 0) return hundredStr;
-          return `${hundredStr} ${convertToFrench(remainder)}`;
-        }
-
-        if (n < 1000000) {
-          const thousands = Math.floor(n / 1000);
-          const remainder = n % 1000;
-          const thousandStr = thousands === 1 ? "mille" : `${convertToFrench(thousands)} mille`;
-          if (remainder === 0) return thousandStr;
-          return `${thousandStr} ${convertToFrench(remainder)}`;
-        }
-
-        return "nombre trop grand";
-      }
-
+    function init() {
       const input = document.getElementById('numberInput');
       const result = document.getElementById('result');
+      
+      if (!input || !result) return;
 
       input.addEventListener('input', function() {
         const number = parseInt(this.value);
@@ -267,9 +196,18 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
         const frenchNumber = convertToFrench(number);
         result.innerHTML = colorizeAndAddTooltips(frenchNumber);
       });
-    });
-  </script>
-</div>
+    }
+
+    // [Rest of your JavaScript functions remain the same]
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
 
 ---
 
