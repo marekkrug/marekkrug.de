@@ -8,6 +8,8 @@ description: Ein einfacher Zahlenkonverter zum umrechnen französischer Zahlen
 
 Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb habe ich diesen kleinen Zahlenumrechner gebaut, mit dem man Zahlen in französische Zahlen umwandeln kann. Viel Spaß damit:
 
+⚠️ Work in Progress
+
 {% include french_number_conversion.html %}
 
 ---
