@@ -37,8 +37,10 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: #333; /* Dark background */
-        color: #fff; /* Light text color for contrast */
+        background-color: #333;
+        /* Dark background */
+        color: #fff;
+        /* Light text color for contrast */
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -47,7 +49,8 @@
     .french-result {
         padding: 1rem;
         border-radius: 4px;
-        background-color: #444; /* Slightly lighter background for result */
+        background-color: #444;
+        /* Slightly lighter background for result */
         min-height: 3rem;
         font-size: clamp(1.2rem, 4vw, 2rem);
         display: flex;
@@ -62,8 +65,10 @@
     }
 
     .french-converter-container input {
-        background-color: #555; /* Dark background for input */
-        color: #fff; /* Light text color for input */
+        background-color: #555;
+        /* Dark background for input */
+        color: #fff;
+        /* Light text color for input */
         width: 100%;
         padding: 1rem;
         border: 1px solid #ddd;
@@ -105,11 +110,25 @@
         border-radius: 3px;
     }
 
-    .french-unit { color: #4CAF50; }
-    .french-tens { color: #2196F3; }
-    .french-hundred { color: #F44336; }
-    .french-thousand { color: #9C27B0; }
-    .french-connector { color: #FF9800; }
+    .french-unit {
+        color: #4CAF50;
+    }
+
+    .french-tens {
+        color: #2196F3;
+    }
+
+    .french-hundred {
+        color: #F44336;
+    }
+
+    .french-thousand {
+        color: #9C27B0;
+    }
+
+    .french-connector {
+        color: #FF9800;
+    }
 
     .french-legend {
         margin-top: 20px;
@@ -145,274 +164,342 @@
 </style>
 
 <script>
-/* First define all functions and data */
-const numberRules = {
-    'un': {
-        de: 'Eins - Grundzahl',
-        en: 'One - Basic number',
-        fr: 'Un - Nombre de base'
-    },
-    'deux': {
-        de: 'Zwei - Grundzahl',
-        en: 'Two - Basic number',
-        fr: 'Deux - Nombre de base'
-    },
-    'trois': {
-        de: 'Drei - Grundzahl',
-        en: 'Three - Basic number',
-        fr: 'Trois - Nombre de base'
-    },
-    'quatre': {
-        de: 'Vier - Grundzahl',
-        en: 'Four - Basic number',
-        fr: 'Quatre - Nombre de base'
-    },
-    'cinq': {
-        de: 'Fünf - Grundzahl',
-        en: 'Five - Basic number',
-        fr: 'Cinq - Nombre de base'
-    },
-    'six': {
-        de: 'Sechs - Grundzahl',
-        en: 'Six - Basic number',
-        fr: 'Six - Nombre de base'
-    },
-    'sept': {
-        de: 'Sieben - Grundzahl',
-        en: 'Seven - Basic number',
-        fr: 'Sept - Nombre de base'
-    },
-    'huit': {
-        de: 'Acht - Grundzahl',
-        en: 'Eight - Basic number',
-        fr: 'Huit - Nombre de base'
-    },
-    'neuf': {
-        de: 'Neun - Grundzahl',
-        en: 'Nine - Basic number',
-        fr: 'Neuf - Nombre de base'
-    },
-    'dix': {
-        de: 'Zehn',
-        en: 'Ten',
-        fr: 'Dix'
-    },
-    'onze': {
-        de: 'Elf',
-        en: 'Eleven',
-        fr: 'Onze'
-    },
-    'douze': {
-        de: 'Zwölf',
-        en: 'Twelve',
-        fr: 'Douze'
-    },
-    'treize': {
-        de: 'Dreizehn',
-        en: 'Thirteen',
-        fr: 'Treize'
-    },
-    'quatorze': {
-        de: 'Vierzehn',
-        en: 'Fourteen',
-        fr: 'Quatorze'
-    },
-    'quinze': {
-        de: 'Fünfzehn',
-        en: 'Fifteen',
-        fr: 'Quinze'
-    },
-    'seize': {
-        de: 'Sechzehn',
-        en: 'Sixteen',
-        fr: 'Seize'
-    },
-    'vingt': {
-        de: 'Zwanzig',
-        en: 'Twenty',
-        fr: 'Vingt - Base for 20'
-    },
-    'trente': {
-        de: 'Dreißig',
-        en: 'Thirty',
-        fr: 'Trente - Base for 30'
-    },
-    'quarante': {
-        de: 'Vierzig',
-        en: 'Forty',
-        fr: 'Quarante - Base for 40'
-    },
-    'cinquante': {
-        de: 'Fünfzig',
-        en: 'Fifty',
-        fr: 'Cinquante - Base for 50'
-    },
-    'soixante': {
-        de: 'Sechzig',
-        en: 'Sixty',
-        fr: 'Soixante - Base for 60'
-    },
-    'soixante-dix': {
-        de: 'Siebzig (60+10)',
-        en: 'Seventy (60+10)',
-        fr: 'Soixante-dix - 60 plus 10'
-    },
-    'quatre-vingt': {
-        de: 'Achtzig (4x20)',
-        en: 'Eighty (4x20)',
-        fr: 'Quatre-vingt - 4 times 20'
-    },
-    'quatre-vingts': {
-        de: 'Achtzig (mit s, wenn allein)',
-        en: 'Eighty (with s when alone)',
-        fr: 'Quatre-vingts - utilisé pour 80 exactement'
-    },
-    'quatre-vingt-dix': {
-        de: 'Neunzig (4x20+10)',
-        en: 'Ninety (4x20+10)',
-        fr: 'Quatre-vingt-dix - 80 plus 10'
-    },
-    'cent': {
-        de: 'Hundert – wird für Zahlen ab 100 verwendet. Bei Rundzahlen (z. B. 200) wird ein "s" angehängt.',
-        en: 'Hundred – used for numbers starting at 100. For round numbers (e.g., 200), add an "s".',
-        fr: 'Cent – utilisé pour les nombres à partir de 100. Un "s" est ajouté pour les nombres ronds (ex. 200 → deux cents).'
-    },
-    'mille': {
-        de: 'Tausend – wird für Zahlen ab 1000 verwendet. "Mille" nimmt niemals ein "s".',
-        en: 'Thousand – used for numbers starting at 1000. "Mille" never takes an "s".',
-        fr: 'Mille – utilisé pour les nombres à partir de 1000. "Mille" ne prend jamais de "s".'
-    },
-    'et': {
-        de: 'und – wird nur bei Zahlen, die auf 1 enden (außer bei 81, 91), verwendet.',
-        en: 'and – used only for numbers ending in 1 (except 81, 91).',
-        fr: 'et – utilisé uniquement pour les nombres se terminant par 1 (sauf 81, 91).'
-    }
-};
+    /* First define all functions and data */
+    /* 1. Number conversion (unchanged from the previous corrected version) */
+    const numberRules = {
+        un: {
+            de: "Eins - Grundzahl",
+            en: "One - Basic number",
+            fr: "Un - Nombre de base",
+        },
+        deux: {
+            de: "Zwei - Grundzahl",
+            en: "Two - Basic number",
+            fr: "Deux - Nombre de base",
+        },
+        trois: {
+            de: "Drei - Grundzahl",
+            en: "Three - Basic number",
+            fr: "Trois - Nombre de base",
+        },
+        quatre: {
+            de: "Vier - Grundzahl",
+            en: "Four - Basic number",
+            fr: "Quatre - Nombre de base",
+        },
+        cinq: {
+            de: "Fünf - Grundzahl",
+            en: "Five - Basic number",
+            fr: "Cinq - Nombre de base",
+        },
+        six: {
+            de: "Sechs - Grundzahl",
+            en: "Six - Basic number",
+            fr: "Six - Nombre de base",
+        },
+        sept: {
+            de: "Sieben - Grundzahl",
+            en: "Seven - Basic number",
+            fr: "Sept - Nombre de base",
+        },
+        huit: {
+            de: "Acht - Grundzahl",
+            en: "Eight - Basic number",
+            fr: "Huit - Nombre de base",
+        },
+        neuf: {
+            de: "Neun - Grundzahl",
+            en: "Nine - Basic number",
+            fr: "Neuf - Nombre de base",
+        },
+        dix: {
+            de: "Zehn",
+            en: "Ten",
+            fr: "Dix",
+        },
+        onze: {
+            de: "Elf",
+            en: "Eleven",
+            fr: "Onze",
+        },
+        douze: {
+            de: "Zwölf",
+            en: "Twelve",
+            fr: "Douze",
+        },
+        treize: {
+            de: "Dreizehn",
+            en: "Thirteen",
+            fr: "Treize",
+        },
+        quatorze: {
+            de: "Vierzehn",
+            en: "Fourteen",
+            fr: "Quatorze",
+        },
+        quinze: {
+            de: "Fünfzehn",
+            en: "Fifteen",
+            fr: "Quinze",
+        },
+        seize: {
+            de: "Sechzehn",
+            en: "Sixteen",
+            fr: "Seize",
+        },
+        vingt: {
+            de: "Zwanzig",
+            en: "Twenty",
+            fr: "Vingt - Base for 20",
+        },
+        trente: {
+            de: "Dreißig",
+            en: "Thirty",
+            fr: "Trente - Base for 30",
+        },
+        quarante: {
+            de: "Vierzig",
+            en: "Forty",
+            fr: "Quarante - Base for 40",
+        },
+        cinquante: {
+            de: "Fünfzig",
+            en: "Fifty",
+            fr: "Cinquante - Base for 50",
+        },
+        soixante: {
+            de: "Sechzig",
+            en: "Sixty",
+            fr: "Soixante - Base for 60",
+        },
+        "soixante-dix": {
+            de: "Siebzig (60+10)",
+            en: "Seventy (60+10)",
+            fr: "Soixante-dix - 60 plus 10",
+        },
+        "quatre-vingt": {
+            de: "Achtzig (4x20)",
+            en: "Eighty (4x20)",
+            fr: "Quatre-vingt - 4 times 20",
+        },
+        "quatre-vingts": {
+            de: 'Achtzig (mit s, wenn allein)',
+            en: 'Eighty (with s when alone)',
+            fr: "Quatre-vingts - utilisé pour 80 exactement",
+        },
+        "quatre-vingt-dix": {
+            de: "Neunzig (4x20+10)",
+            en: "Ninety (4x20+10)",
+            fr: "Quatre-vingt-dix - 80 plus 10",
+        },
+        cent: {
+            de: 'Hundert – wird für Zahlen ab 100 verwendet. Bei Rundzahlen (z. B. 200) wird ein "s" angehängt.',
+            en: 'Hundred – used for numbers starting at 100. For round numbers (e.g., 200), add an "s".',
+            fr: 'Cent – utilisé pour les nombres à partir de 100. Un "s" est ajouté pour les nombres ronds (ex. 200 → deux cents).',
+        },
+        mille: {
+            de: 'Tausend – wird für Zahlen ab 1000 verwendet. "Mille" nimmt niemals ein "s".',
+            en: 'Thousand – used for numbers starting at 1000. "Mille" never takes an "s".',
+            fr: 'Mille – utilisé pour les nombres à partir de 1000. "Mille" ne prend jamais de "s".',
+        },
+        et: {
+            de: 'und – wird nur bei Zahlen, die auf 1 enden (außer bei 81, 91), verwendet.',
+            en: 'and – used only for numbers ending in 1 (except 81, 91).',
+            fr: 'et – utilisé uniquement pour les nombres se terminant par 1 (sauf 81, 91).',
+        },
+    };
 
-function convertToFrench(n) {
-    if (n === 0) return "zéro";
-    if (n < 0) return `moins ${convertToFrench(-n)}`;
+    function convertToFrench(n) {
+        if (n === 0) return "zéro";
+        if (n < 0) return `moins ${convertToFrench(-n)}`;
 
-    const units = ["", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix",
-        "onze", "douze", "treize", "quatorze", "quinze", "seize"];
-    const tens = ["", "dix", "vingt", "trente", "quarante", "cinquante", "soixante"];
+        const units = [
+            "",
+            "un",
+            "deux",
+            "trois",
+            "quatre",
+            "cinq",
+            "six",
+            "sept",
+            "huit",
+            "neuf",
+            "dix",
+            "onze",
+            "douze",
+            "treize",
+            "quatorze",
+            "quinze",
+            "seize",
+        ];
+        const tens = ["", "dix", "vingt", "trente", "quarante", "cinquante", "soixante"];
 
-    if (n < 17) return units[n];
-    if (n < 20) return `dix-${units[n - 10]}`;
+        if (n < 17) return units[n];
+        if (n < 20) return `dix-${units[n - 10]}`;
 
-    if (n < 100) {
-        const ten = Math.floor(n / 10);
-        const unit = n % 10;
+        if (n < 100) {
+            const ten = Math.floor(n / 10);
+            const unit = n % 10;
 
-        if (ten === 7) {
-            if (unit === 1) return "soixante et onze";
-            return `soixante-${convertToFrench(10 + unit)}`;
-        }
-        if (ten === 8) {
-            if (unit === 0) return "quatre-vingts";
-            return `quatre-vingt-${units[unit]}`;
-        }
-        if (ten === 9) {
-            return `quatre-vingt-${convertToFrench(10 + unit)}`;
-        }
-        if (unit === 0) return tens[ten];
-        if (unit === 1) return `${tens[ten]} et ${units[unit]}`;
-        return `${tens[ten]}-${units[unit]}`;
-    }
-
-    if (n < 1000) {
-        const hundreds = Math.floor(n / 100);
-        const remainder = n % 100;
-        let hundredStr = (hundreds === 1 ? "cent" : `${units[hundreds]} cent`);
-        if (remainder === 0 && hundreds > 1) hundredStr += "s";
-        if (remainder === 0) return hundredStr;
-        return `${hundredStr} ${convertToFrench(remainder)}`;
-    }
-
-    if (n < 1000000) {
-        const thousands = Math.floor(n / 1000);
-        const remainder = n % 1000;
-        const thousandStr = thousands === 1 ? "mille" : `${convertToFrench(thousands)} mille`;
-        if (remainder === 0) return thousandStr;
-        return `${thousandStr} ${convertToFrench(remainder)}`;
-    }
-
-    return "nombre trop grand";
-}
-
-function createTooltip(word) {
-    if (numberRules[word]) {
-        return `
-            <span class="french-tooltip">
-                ${word}
-                <span class="french-tooltip-text">
-                    🇩🇪 ${numberRules[word].de}<br>
-                    🇬🇧 ${numberRules[word].en}<br>
-                    🇫🇷 ${numberRules[word].fr}
-                </span>
-            </span>
-        `;
-    }
-    return word;
-}
-
-function colorizeAndAddTooltips(number) {
-    let parts = number.split(' ');
-    return parts.map(part => {
-        if (part.includes('-')) {
-            return part.split('-').map(p => {
-                let cssClass = 'french-unit';
-                if (p.includes('mille')) cssClass = 'french-thousand';
-                else if (p.includes('cent')) cssClass = 'french-hundred';
-                else if (p.includes('vingt') || p.includes('trente') || p.includes('quarante') ||
-                    p.includes('cinquante') || p.includes('soixante')) cssClass = 'french-tens';
-                else if (p === 'et') cssClass = 'french-connector';
-                return `<span class="french-number-part ${cssClass}">${createTooltip(p)}</span>`;
-            }).join('-');
-        } else {
-            let cssClass = 'french-unit';
-            if (part.includes('mille')) cssClass = 'french-thousand';
-            else if (part.includes('cent')) cssClass = 'french-hundred';
-            else if (part.includes('vingt') || part.includes('trente') || part.includes('quarante') ||
-                part.includes('cinquante') || part.includes('soixante')) cssClass = 'french-tens';
-            else if (part === 'et') cssClass = 'french-connector';
-            return `<span class="french-number-part ${cssClass}">${createTooltip(part)}</span>`;
-        }
-    }).join(' ');
-}
-
-/* Then add event listeners after all functions are defined */
-document.addEventListener('DOMContentLoaded', function() {
-    const input = document.getElementById('numberInput');
-    const result = document.getElementById('result');
-
-    input.addEventListener('input', function () {
-        if (input.value === '') {
-            result.innerHTML = "input a number";
-            return;
-        }
-
-        const number = parseInt(input.value, 10);
-
-        if (isNaN(number)) {
-            result.innerHTML = "input a valid number";
-            return;
-        }
-
-        if (number < -999999 || number > 999999) {
-            result.innerHTML = "input a number between -999999 and 999999";
-            return;
-        }
-
-        const frenchNumber = convertToFrench(number);
-        if (!isNaN(number)) {
-            if (frenchNumber) {
-                result.innerHTML = colorizeAndAddTooltips(frenchNumber);
-            } else {
-                result.innerHTML = "Conversion error";
+            if (ten === 7) {
+                /* 70-79 are 60 + (10 to 19) */
+                if (unit === 1) return "soixante et onze";
+                return `soixante-${convertToFrench(10 + unit)}`;
             }
+            if (ten === 8) {
+                /* 80 is "quatre-vingts" (with an "s" when no following digit) */
+                if (unit === 0) return "quatre-vingts";
+                return `quatre-vingt ${units[unit]}`;
+            }
+            if (ten === 9) {
+                /* 90-99 are 80 + (10 to 19) */
+                return `quatre-vingt ${convertToFrench(10 + unit)}`;
+            }
+            if (unit === 0) return tens[ten];
+            if (unit === 1) return `${tens[ten]} et ${units[unit]}`;
+            return `${tens[ten]}-${units[unit]}`;
         }
+
+        if (n < 1000) {
+            const hundreds = Math.floor(n / 100);
+            const remainder = n % 100;
+            let hundredStr = hundreds === 1 ? "cent" : `${units[hundreds]} cent`;
+            if (remainder === 0 && hundreds > 1) hundredStr += "s";
+            if (remainder === 0) return hundredStr;
+            return `${hundredStr} ${convertToFrench(remainder)}`;
+        }
+
+        if (n < 1000000) {
+            const thousands = Math.floor(n / 1000);
+            const remainder = n % 1000;
+            const thousandStr = thousands === 1 ? "mille" : `${convertToFrench(thousands)} mille`;
+            if (remainder === 0) return thousandStr;
+            return `${thousandStr} ${convertToFrench(remainder)}`;
+        }
+
+        return "nombre trop grand";
+    }
+
+
+
+    /* 2. Tooltip code (modified to split hyphenated compounds into individual parts) */
+    function colorizeAndAddTooltips(number) {
+        const compoundNumbers = [
+            "quatre-vingts",
+            "quatre-vingt",
+            "quatre-vingt-dix",
+            "soixante-dix",
+            "quatre-vingt-onze",
+            "quatre-vingt-douze",
+            "quatre-vingt-treize",
+            "quatre-vingt-quatorze",
+            "quatre-vingt-quinze",
+            "quatre-vingt-seize",
+            "soixante-et-onze",
+            "soixante-douze",
+            "soixante-treize",
+            "soixante-quatorze",
+            "soixante-quinze",
+            "soixante-seize",
+        ];
+        let parts = number.split(" ");
+
+        return parts
+            .map((part) => {
+                /* If the entire part is one of the predefined compound numbers,
+                wrap it in a single tooltip. */
+                if (compoundNumbers.includes(part)) {
+                    const cssClass = determineCssClass(part);
+                    return `<span class="french-number-part ${cssClass}">${createTooltip(
+                        part
+                    )}</span>`;
+                }
+
+                /* If the part contains a hyphen (and isn't a known compound),
+                split into subparts, tooltip each, and rejoin with hyphens. */
+                if (part.includes("-")) {
+                    let subParts = part.split("-");
+                    return subParts
+                        .map(
+                            (sub) =>
+                                `<span class="french-number-part ${determineCssClass(
+                                    sub
+                                )}">${createTooltip(sub)}</span>`
+                        )
+                        .join("-");
+                }
+
+                /* Otherwise, simply wrap the part. */
+                return `<span class="french-number-part ${determineCssClass(
+                    part
+                )}">${createTooltip(part)}</span>`;
+            })
+            .join(" ");
+    }
+
+    function determineCssClass(word) {
+        if (word.includes("mille")) return "french-thousand";
+        if (word.includes("cent")) return "french-hundred";
+        if (word === "et") return "french-connector";
+        if (
+            word.includes("vingt") ||
+            word.includes("trente") ||
+            word.includes("quarante") ||
+            word.includes("cinquante") ||
+            word.includes("soixante")
+        )
+            return "french-tens";
+        return "french-unit";
+    }
+
+    function createTooltip(word) {
+        if (numberRules[word]) {
+            return `
+      <span class="french-tooltip">
+        ${word}
+        <span class="french-tooltip-text">
+          🇩🇪 ${numberRules[word].de}<br>
+          🇬🇧 ${numberRules[word].en}<br>
+          🇫🇷 ${numberRules[word].fr}
+        </span>
+      </span>
+    `;
+        }
+        return word;
+    }
+
+    /* Then add event listeners after all functions are defined */
+    document.addEventListener('DOMContentLoaded', function () {
+        const input = document.getElementById('numberInput');
+        const result = document.getElementById('result');
+
+        input.addEventListener('input', function () {
+            if (input.value === '') {
+                result.innerHTML = "input a number";
+                return;
+            }
+
+            const number = parseInt(input.value, 10);
+
+            if (isNaN(number)) {
+                result.innerHTML = "input a valid number";
+                return;
+            }
+
+            if (number < -999999 || number > 999999) {
+                result.innerHTML = "input a number between -999999 and 999999";
+                return;
+            }
+
+            const frenchNumber = convertToFrench(number);
+            if (!isNaN(number)) {
+                if (frenchNumber) {
+                    result.innerHTML = colorizeAndAddTooltips(frenchNumber);
+                } else {
+                    result.innerHTML = "Conversion error";
+                }
+            }
+        });
     });
-});
 </script>
 {% endraw %}
