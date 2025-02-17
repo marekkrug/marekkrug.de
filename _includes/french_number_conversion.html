@@ -1,35 +1,35 @@
 {% raw %}
-<div class="converter-container">
-    <div class="result" id="result">input a number</div>
-    <div class="input-group">
+<div class="french-converter-container">
+    <div class="french-result" id="result">input a number</div>
+    <div class="french-input-group">
         <input type="number" id="numberInput" placeholder="z.B. 42" inputmode="numeric" pattern="[0-9]*">
     </div>
-    <div class="legend">
-        <div class="legend-item">
-            <div class="legend-color" style="background-color: #4CAF50"></div>
+    <div class="french-legend">
+        <div class="french-legend-item">
+            <div class="french-legend-color" style="background-color: #4CAF50"></div>
             Basic Numbers (1-16)
         </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background-color: #2196F3"></div>
+        <div class="french-legend-item">
+            <div class="french-legend-color" style="background-color: #2196F3"></div>
             Tens (20-90)
         </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background-color: #F44336"></div>
+        <div class="french-legend-item">
+            <div class="french-legend-color" style="background-color: #F44336"></div>
             Hundreds
         </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background-color: #9C27B0"></div>
+        <div class="french-legend-item">
+            <div class="french-legend-color" style="background-color: #9C27B0"></div>
             Thousands
         </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background-color: #FF9800"></div>
+        <div class="french-legend-item">
+            <div class="french-legend-color" style="background-color: #FF9800"></div>
             Connectors
         </div>
     </div>
 </div>
 
 <style>
-    .converter-container {
+    .french-converter-container {
         font-family: system-ui, -apple-system, sans-serif;
         width: 100%;
         max-width: 800px !important;
@@ -37,16 +37,17 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: rgba(100, 100, 100, 0.5);
+        background-color: #333; /* Dark background */
+        color: #fff; /* Light text color for contrast */
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
 
-    .result {
+    .french-result {
         padding: 1rem;
         border-radius: 4px;
-        background-color: rgba(100, 100, 100, 0.8);
+        background-color: #444; /* Slightly lighter background for result */
         min-height: 3rem;
         font-size: clamp(1.2rem, 4vw, 2rem);
         display: flex;
@@ -56,12 +57,13 @@
         overflow-wrap: break-word;
     }
 
-    .input-group {
+    .french-input-group {
         margin-top: 0.5rem;
     }
 
-    .converter-container input {
-        background-color: rgba(100, 100, 100, 0.5);
+    .french-converter-container input {
+        background-color: #555; /* Dark background for input */
+        color: #fff; /* Light text color for input */
         width: 100%;
         padding: 1rem;
         border: 1px solid #ddd;
@@ -69,13 +71,13 @@
         font-size: clamp(1rem, 3vw, 1.5rem);
     }
 
-    .tooltip {
+    .french-tooltip {
         position: relative;
         display: inline-block;
         cursor: help;
     }
 
-    .tooltip-text {
+    .french-tooltip-text {
         visibility: hidden;
         position: absolute;
         z-index: 1;
@@ -93,23 +95,23 @@
         transition: opacity 0.3s;
     }
 
-    .tooltip:hover .tooltip-text {
+    .french-tooltip:hover .french-tooltip-text {
         visibility: visible;
         opacity: 1;
     }
 
-    .number-part {
+    .french-number-part {
         padding: 2px 4px;
         border-radius: 3px;
     }
 
-    .unit { color: #4CAF50; }
-    .tens { color: #2196F3; }
-    .hundred { color: #F44336; }
-    .thousand { color: #9C27B0; }
-    .connector { color: #FF9800; }
+    .french-unit { color: #4CAF50; }
+    .french-tens { color: #2196F3; }
+    .french-hundred { color: #F44336; }
+    .french-thousand { color: #9C27B0; }
+    .french-connector { color: #FF9800; }
 
-    .legend {
+    .french-legend {
         margin-top: 20px;
         display: flex;
         flex-wrap: wrap;
@@ -117,25 +119,25 @@
         font-size: 14px;
     }
 
-    .legend-item {
+    .french-legend-item {
         display: flex;
         align-items: center;
         gap: 5px;
     }
 
-    .legend-color {
+    .french-legend-color {
         width: 20px;
         height: 20px;
         border-radius: 3px;
     }
 
     @media (max-height: 600px) {
-        .converter-container {
+        .french-converter-container {
             margin: 10px auto;
             padding: 10px;
         }
 
-        .tooltip-text {
+        .french-tooltip-text {
             width: 200px;
             font-size: 12px;
         }
@@ -341,9 +343,9 @@ function convertToFrench(n) {
 function createTooltip(word) {
     if (numberRules[word]) {
         return `
-            <span class="tooltip">
+            <span class="french-tooltip">
                 ${word}
-                <span class="tooltip-text">
+                <span class="french-tooltip-text">
                     🇩🇪 ${numberRules[word].de}<br>
                     🇬🇧 ${numberRules[word].en}<br>
                     🇫🇷 ${numberRules[word].fr}
@@ -359,22 +361,22 @@ function colorizeAndAddTooltips(number) {
     return parts.map(part => {
         if (part.includes('-')) {
             return part.split('-').map(p => {
-                let cssClass = 'unit';
-                if (p.includes('mille')) cssClass = 'thousand';
-                else if (p.includes('cent')) cssClass = 'hundred';
+                let cssClass = 'french-unit';
+                if (p.includes('mille')) cssClass = 'french-thousand';
+                else if (p.includes('cent')) cssClass = 'french-hundred';
                 else if (p.includes('vingt') || p.includes('trente') || p.includes('quarante') ||
-                    p.includes('cinquante') || p.includes('soixante')) cssClass = 'tens';
-                else if (p === 'et') cssClass = 'connector';
-                return `<span class="number-part ${cssClass}">${createTooltip(p)}</span>`;
+                    p.includes('cinquante') || p.includes('soixante')) cssClass = 'french-tens';
+                else if (p === 'et') cssClass = 'french-connector';
+                return `<span class="french-number-part ${cssClass}">${createTooltip(p)}</span>`;
             }).join('-');
         } else {
-            let cssClass = 'unit';
-            if (part.includes('mille')) cssClass = 'thousand';
-            else if (part.includes('cent')) cssClass = 'hundred';
+            let cssClass = 'french-unit';
+            if (part.includes('mille')) cssClass = 'french-thousand';
+            else if (part.includes('cent')) cssClass = 'french-hundred';
             else if (part.includes('vingt') || part.includes('trente') || part.includes('quarante') ||
-                part.includes('cinquante') || part.includes('soixante')) cssClass = 'tens';
-            else if (part === 'et') cssClass = 'connector';
-            return `<span class="number-part ${cssClass}">${createTooltip(part)}</span>`;
+                part.includes('cinquante') || part.includes('soixante')) cssClass = 'french-tens';
+            else if (part === 'et') cssClass = 'french-connector';
+            return `<span class="french-number-part ${cssClass}">${createTooltip(part)}</span>`;
         }
     }).join(' ');
 }
