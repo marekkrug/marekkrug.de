@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <div class="converter-container">
     <div class="result" id="result">input a number</div>
     <div class="input-group">
@@ -160,6 +159,7 @@
             }
         }
     </style>
+    {% raw %}
     <script>
         // Expanded dictionary with concise French number rules:
         const numberRules = {
@@ -402,8 +402,8 @@
             return "nombre trop grand";
         };
 
-        const input = document.getElementById('numberInput');
         const result = document.getElementById('result');
+        const input = document.getElementById('numberInput');
 
         input.addEventListener('input', function () {
             if (input.value === '') {
@@ -433,4 +433,5 @@
             }
         });
     </script>
+    {% endraw %}
 </div>
