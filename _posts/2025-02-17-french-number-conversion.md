@@ -2,7 +2,7 @@
 title: Französischer Zahlenkonverter
 date: 2025-02-17 09:45:00 +0100
 categories: [blog, programmieren]
-tags: [random, mini-scripts, französisch, schule]     # TAG names should always be lowercase
+tags: [random-projects, mini-scripts, französisch, schule, educational]
 description: Ein einfacher Zahlenkonverter zum umrechnen französischer Zahlen
 ---
 
