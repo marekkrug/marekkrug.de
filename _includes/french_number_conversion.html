@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <div class="converter-container">
     <div class="result" id="result">input a number</div>
     <div class="input-group">
@@ -307,15 +308,15 @@
         function createTooltip(word) {
             if (numberRules[word]) {
                 return `
-        <span class="tooltip">
-        ${word}
-        <span class="tooltip-text">
-            🇩🇪 ${numberRules[word].de}<br>
-            🇬🇧 ${numberRules[word].en}<br>
-            🇫🇷 ${numberRules[word].fr}
-        </span>
-        </span>
-    `;
+    <span class="tooltip">
+    ${word}
+    <span class="tooltip-text">
+        🇩🇪 ${numberRules[word].de}<br>
+        🇬🇧 ${numberRules[word].en}<br>
+        🇫🇷 ${numberRules[word].fr}
+    </span>
+    </span>
+`;
             }
             return word;
         }
@@ -399,18 +400,18 @@
             }
 
             return "nombre trop grand";
-        }
+        };
 
         const input = document.getElementById('numberInput');
         const result = document.getElementById('result');
 
         input.addEventListener('input', function () {
-            const number = parseInt(this.value);
-
-            if (this.value === '') {
+            if (input.value === '') {
                 result.innerHTML = "input a number";
                 return;
             }
+
+            const number = parseInt(input.value, 10);
 
             if (isNaN(number)) {
                 result.innerHTML = "input a valid number";
@@ -423,7 +424,13 @@
             }
 
             const frenchNumber = convertToFrench(number);
-            result.innerHTML = colorizeAndAddTooltips(frenchNumber);
+            if (!isNaN(number)) {
+                if (frenchNumber) {
+                    result.innerHTML = colorizeAndAddTooltips(frenchNumber);
+                } else {
+                    result.innerHTML = "Conversion error";
+                }
+            }
         });
     </script>
 </div>
