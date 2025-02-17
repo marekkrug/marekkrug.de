@@ -84,7 +84,7 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
 </head>
 <body>
   <div class="converter-container">
-    <div class="result" id="result">Gib eine Zahl ein, um sie in Französisch umzuwandeln</div>
+    <div class="result" id="result">input a number</div>
     <div class="input-group">
       <input type="number" 
              id="numberInput" 
@@ -150,17 +150,17 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       const number = parseInt(this.value);
       
       if (this.value === '') {
-        result.textContent = "Geben Sie eine Zahl ein";
+        result.textContent = "input a number";
         return;
       }
       
       if (isNaN(number)) {
-        result.textContent = "Bitte geben Sie eine gültige Zahl ein";
+        result.textContent = "input a valid number";
         return;
       }
       
       if (number < -999999 || number > 999999) {
-        result.textContent = "Bitte geben Sie eine Zahl zwischen -999999 und 999999 ein";
+        result.textContent = "input a number between -999999 and 999999";
         return;
       }
       
