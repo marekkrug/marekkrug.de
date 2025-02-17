@@ -2,15 +2,13 @@
 title: Französischer Zahlenkonverter
 date: 2025-02-17 09:45:00 +0100
 categories: [blog, programmieren]
-tags: [random-projects, mini-scripts, französisch, schule, educational]     # TAG names should always be lowercase
+tags: [random-projects, mini-scripts, französisch, schule, educational]
 description: Ein einfacher Zahlenkonverter zum umrechnen französischer Zahlen
 ---
 
 Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb habe ich diesen kleinen Zahlenumrechner gebaut, mit dem man Zahlen in französische Zahlen umwandeln kann. Viel Spaß damit:
 
 <div class="converter-container">
-<html>
-<head>
   <style>
     .converter-container {
       font-family: system-ui, -apple-system, sans-serif;
@@ -112,38 +110,35 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       }
     }
   </style>
-</head>
-<body>
-  <div class="converter-container">
-    <div class="result" id="result">input a number</div>
-    <div class="input-group">
-      <input type="number" 
-             id="numberInput" 
-             placeholder="z.B. 42" 
-             inputmode="numeric" 
-             pattern="[0-9]*">
+
+  <div class="result" id="result">input a number</div>
+  <div class="input-group">
+    <input type="number" 
+           id="numberInput" 
+           placeholder="z.B. 42" 
+           inputmode="numeric" 
+           pattern="[0-9]*">
+  </div>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #4CAF50"></div>
+      Basic Numbers (1-16)
     </div>
-    <div class="legend">
-      <div class="legend-item">
-        <div class="legend-color" style="background-color: #4CAF50"></div>
-        Basic Numbers (1-16)
-      </div>
-      <div class="legend-item">
-        <div class="legend-color" style="background-color: #2196F3"></div>
-        Tens (20-90)
-      </div>
-      <div class="legend-item">
-        <div class="legend-color" style="background-color: #F44336"></div>
-        Hundreds
-      </div>
-      <div class="legend-item">
-        <div class="legend-color" style="background-color: #9C27B0"></div>
-        Thousands
-      </div>
-      <div class="legend-item">
-        <div class="legend-color" style="background-color: #FF9800"></div>
-        Connectors
-      </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #2196F3"></div>
+      Tens (20-90)
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #F44336"></div>
+      Hundreds
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #9C27B0"></div>
+      Thousands
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #FF9800"></div>
+      Connectors
     </div>
   </div>
 
@@ -414,8 +409,6 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
       result.innerHTML = colorizeAndAddTooltips(frenchNumber);
     });
   </script>
-</body>
-</html>
 </div>
 
 ---
