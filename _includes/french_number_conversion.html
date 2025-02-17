@@ -161,6 +161,39 @@
     </style>
     {% raw %}
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('numberInput');
+            const result = document.getElementById('result');
+
+            input.addEventListener('input', function () {
+                if (input.value === '') {
+                    result.innerHTML = "input a number";
+                    return;
+                }
+
+                const number = parseInt(input.value, 10);
+
+                if (isNaN(number)) {
+                    result.innerHTML = "input a valid number";
+                    return;
+                }
+
+                if (number < -999999 || number > 999999) {
+                    result.innerHTML = "input a number between -999999 and 999999";
+                    return;
+                }
+
+                const frenchNumber = convertToFrench(number);
+                if (!isNaN(number)) {
+                    if (frenchNumber) {
+                        result.innerHTML = colorizeAndAddTooltips(frenchNumber);
+                    } else {
+                        result.innerHTML = "Conversion error";
+                    }
+                }
+            });
+        });
+
         // Expanded dictionary with concise French number rules:
         const numberRules = {
             'un': {
@@ -401,37 +434,6 @@
 
             return "nombre trop grand";
         };
-
-        const result = document.getElementById('result');
-        const input = document.getElementById('numberInput');
-
-        input.addEventListener('input', function () {
-            if (input.value === '') {
-                result.innerHTML = "input a number";
-                return;
-            }
-
-            const number = parseInt(input.value, 10);
-
-            if (isNaN(number)) {
-                result.innerHTML = "input a valid number";
-                return;
-            }
-
-            if (number < -999999 || number > 999999) {
-                result.innerHTML = "input a number between -999999 and 999999";
-                return;
-            }
-
-            const frenchNumber = convertToFrench(number);
-            if (!isNaN(number)) {
-                if (frenchNumber) {
-                    result.innerHTML = colorizeAndAddTooltips(frenchNumber);
-                } else {
-                    result.innerHTML = "Conversion error";
-                }
-            }
-        });
     </script>
     {% endraw %}
 </div>
