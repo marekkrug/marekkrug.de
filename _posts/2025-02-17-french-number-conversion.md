@@ -155,7 +155,7 @@ Ich hatte Schwierigkeiten mit der Aussprache von französischen Zahlen. Deshalb 
 </style>
 
 <script>
-// First define all functions and data
+/* First define all functions and data */
 const numberRules = {
     'un': {
         de: 'Eins - Grundzahl',
@@ -391,7 +391,7 @@ function colorizeAndAddTooltips(number) {
     }).join(' ');
 }
 
-// Then add event listeners after all functions are defined
+/* Then add event listeners after all functions are defined*/
 document.addEventListener('DOMContentLoaded', function() {
     const input = document.getElementById('numberInput');
     const result = document.getElementById('result');
