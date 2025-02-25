@@ -34,10 +34,11 @@ Den Source Code dieser Website kannst du dir gerne bei GitHub anschauen:
 
 ### Angaben gemäß § 5 TMG  
 
-**Marek Krug**  
-Eisenzahnstr. 38  
-10709 Berlin  
-Deutschland  
+Postanschrift:  
+z. Hd. **Marek Krug**  
+Chaos Computer Club Berlin / CCC (B) e. V.  
+Marienstraße 11  
+10117 Berlin  
 
 **E-Mail:** website [AT] marekkrug.de  
 

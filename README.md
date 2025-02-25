@@ -1,3 +1,7 @@
+# Website von Marek Krug
+
+Das hier ist meine Website, die ich auf https://marekkrug.de/ hoste. Dort findet ihr Rezepte, 
+
 # Chirpy Starter
 
 [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
