@@ -1,0 +1,13 @@
+User-agent: *
+
+Disallow: /tags/
+Disallow: /categories/
+Disallow: /norobots/
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+Sitemap: https://marekkrug.de/sitemap.xml
