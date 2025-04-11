@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Seite nicht gefunden</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'VT323', 'Courier New', monospace;
+            background-color: #000;
+            color: #0f0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Scanline effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* Noise effect */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 998;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            color: #0f0;
+            text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                        -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+            animation: glitch 500ms infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                            -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                            0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+            }
+            14% {
+                text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                            -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                            0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+            }
+            15% {
+                text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                            0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                            -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+            }
+            49% {
+                text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                            0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                            -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+            }
+            50% {
+                text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                            0.05em 0 0 rgba(0, 255, 0, 0.75),
+                            0 -0.05em 0 rgba(0, 0, 255, 0.75);
+            }
+            99% {
+                text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                            0.05em 0 0 rgba(0, 255, 0, 0.75),
+                            0 -0.05em 0 rgba(0, 0, 255, 0.75);
+            }
+            100% {
+                text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+                            -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+                            -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #0f0;
+            text-shadow: 0 0 5px #0f0;
+            animation: flicker 4s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+                opacity: 1;
+            }
+            20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+                opacity: 0.8;
+            }
+        }
+
+        .game-wrapper {
+            position: relative;
+            width: 90vw;
+            max-width: 800px;
+            padding-top: 45%; /* Maintain aspect ratio */
+            margin: 20px auto;
+        }
+
+        .game-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 4px solid #0f0;
+            background-color: #000;
+            overflow: hidden;
+            display: none;
+            box-shadow: 0 0 10px #0f0, inset 0 0 10px #0f0;
+        }
+
+        #paddle1, #paddle2 {
+            width: 1.5%;
+            height: 20%;
+            background-color: #0f0;
+            position: absolute;
+            box-shadow: 0 0 8px #0f0;
+        }
+
+        #paddle1 {
+            left: 1.5%;
+            top: 40%;
+        }
+
+        #paddle2 {
+            right: 1.5%;
+            top: 40%;
+        }
+
+        #ball {
+            width: 1.5%;
+            height: 3%;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 48.5%;
+            left: 49%;
+            box-shadow: 0 0 10px #fff;
+        }
+
+        .center-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0.5%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                #0f0,
+                #0f0 5%,
+                transparent 5%,
+                transparent 15%
+            );
+            opacity: 0.5;
+        }
+
+        #score {
+            font-size: 3vw;
+            color: #0f0;
+            margin-top: 10px;
+            font-family: 'VT323', monospace;
+            position: absolute;
+            top: 5%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            text-shadow: 0 0 5px #0f0;
+        }
+
+        button {
+            background-color: #000;
+            color: #0f0;
+            border: 2px solid #0f0;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 0;
+            transition: all 0.3s;
+            font-family: 'VT323', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 10px #0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0, 255, 0, 0.4),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        button:hover:before {
+            left: 100%;
+        }
+
+        button:hover {
+            background-color: #0f0;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            text-shadow: 0 0 5px currentColor;
+        }
+
+        #win-message {
+            color: #0f0;
+        }
+
+        #lose-message {
+            color: #f00;
+        }
+
+        .glitch-effect {
+            animation: crt-effect 0.1s infinite;
+        }
+
+        @keyframes crt-effect {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-1px);
+            }
+            50% {
+                transform: translateX(0);
+            }
+            75% {
+                transform: translateX(1px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @font-face {
+            font-family: 'VT323';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/vt323/v17/pxiKyp0ihIEF2isfFJU.woff2) format('woff2');
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .game-wrapper {
+                width: 95vw;
+                padding-top: 65%; /* Steeper aspect ratio for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch-effect">404</h1>
+        <p>SYSTEM ERROR: FILE_NOT_FOUND - ACCESS DENIED</p>
+        <p>Diese Seite existiert nicht auf der Website von Marek.</p>
+        <p>Um zur Hauptseite zurückzukehren, musst du zuerst das RETRO-PONG bezwingen!</p>
+
+        <button id="start-button">SPIELEN</button>
+
+        <div class="game-wrapper">
+            <div class="game-container" id="game-container">
+                <div class="center-line"></div>
+                <div id="paddle1"></div>
+                <div id="ball"></div>
+                <div id="paddle2"></div>
+                <div id="score">0 : 0</div>
+            </div>
+        </div>
+
+        <div class="message" id="win-message">
+            <p>ACCESS GRANTED!</p>
+            <button id="back-button">ZURÜCK ZUR HAUPTSEITE</button>
+        </div>
+
+        <div class="message" id="lose-message">
+            <p>ACCESS DENIED! NEUER VERSUCH ERFORDERLICH.</p>
+            <button id="retry-button">ERNEUT VERSUCHEN</button>
+        </div>
+    </div>
+
+    <script>
+        // Game elements
+        const startButton = document.getElementById('start-button');
+        const gameContainer = document.getElementById('game-container');
+        const paddle1 = document.getElementById('paddle1');
+        const paddle2 = document.getElementById('paddle2');
+        const ball = document.getElementById('ball');
+        const scoreElement = document.getElementById('score');
+        const winMessage = document.getElementById('win-message');
+        const loseMessage = document.getElementById('lose-message');
+        const backButton = document.getElementById('back-button');
+        const retryButton = document.getElementById('retry-button');
+        const gameWrapper = document.querySelector('.game-wrapper');
+
+        // Game variables
+        let gameStarted = false;
+        let ballX = 49;  // Percentage values for responsive design
+        let ballY = 48.5;
+        let ballSpeedX = 0.3;
+        let ballSpeedY = 0.2;
+        let paddle1Y = 40;
+        let paddle2Y = 40;
+        let playerScore = 0;
+        let computerScore = 0;
+        let gameLoop;
+        const paddleHeight = 20;  // Percentage of game height
+        const paddleWidth = 1.5;  // Percentage of game width
+        const ballSize = 1.5;     // Percentage of game width
+        const ballSizeY = 3;      // Percentage of game height
+        const winScore = 3;       // Score needed to win
+
+        // Get actual dimensions for calculations
+        let gameWidth, gameHeight;
+
+        function updateDimensions() {
+            const gameRect = gameContainer.getBoundingClientRect();
+            gameWidth = gameRect.width;
+            gameHeight = gameRect.height;
+        }
+
+        // Function to convert percentage to pixels
+        function percentToPixelsX(percent) {
+            return (percent / 100) * gameWidth;
+        }
+
+        function percentToPixelsY(percent) {
+            return (percent / 100) * gameHeight;
+        }
+
+        // Function to convert pixels to percentage
+        function pixelsToPercentX(pixels) {
+            return (pixels / gameWidth) * 100;
+        }
+
+        function pixelsToPercentY(pixels) {
+            return (pixels / gameHeight) * 100;
+        }
+
+        // Event listeners
+        startButton.addEventListener('click', startGame);
+        backButton.addEventListener('click', () => {
+            window.location.href = 'https://marekkrug.de';
+        });
+        retryButton.addEventListener('click', restartGame);
+
+        // Key controls
+        document.addEventListener('keydown', function(event) {
+            if (!gameStarted) return;
+
+            // Player paddle controls
+            if (event.key === 'ArrowUp' && paddle1Y > 0) {
+                paddle1Y -= 3;
+                if (paddle1Y < 0) paddle1Y = 0;
+            } else if (event.key === 'ArrowDown' && paddle1Y < 100 - paddleHeight) {
+                paddle1Y += 3;
+                if (paddle1Y > 100 - paddleHeight) paddle1Y = 100 - paddleHeight;
+            }
+
+            paddle1.style.top = paddle1Y + '%';
+        });
+
+        // Mouse/touch control
+        gameContainer.addEventListener('mousemove', function(event) {
+            if (!gameStarted) return;
+
+            const rect = gameContainer.getBoundingClientRect();
+            const mouseY = ((event.clientY - rect.top) / rect.height) * 100 - (paddleHeight / 2);
+
+            if (mouseY >= 0 && mouseY <= 100 - paddleHeight) {
+                paddle1Y = mouseY;
+                paddle1.style.top = paddle1Y + '%';
+            }
+        });
+
+        // Mobile touch support
+        gameContainer.addEventListener('touchmove', function(event) {
+            if (!gameStarted) return;
+
+            event.preventDefault();
+            const rect = gameContainer.getBoundingClientRect();
+            const touchY = ((event.touches[0].clientY - rect.top) / rect.height) * 100 - (paddleHeight / 2);
+
+            if (touchY >= 0 && touchY <= 100 - paddleHeight) {
+                paddle1Y = touchY;
+                paddle1.style.top = paddle1Y + '%';
+            }
+        }, { passive: false });
+
+        // Resize event
+        window.addEventListener('resize', function() {
+            if (gameStarted) {
+                updateDimensions();
+            }
+        });
+
+        // Game functions
+        function startGame() {
+            gameStarted = true;
+            startButton.style.display = 'none';
+            gameContainer.style.display = 'block';
+            winMessage.style.display = 'none';
+            loseMessage.style.display = 'none';
+
+            updateDimensions();
+
+            // Reset ball and paddles
+            resetBall();
+            resetScore();
+
+            // Position paddles
+            paddle1.style.top = paddle1Y + '%';
+            paddle2.style.top = paddle2Y + '%';
+
+            // Start game loop
+            gameLoop = setInterval(updateGame, 16); // ~60fps
+        }
+
+        function resetBall() {
+            // Center the ball
+            ballX = 49;
+            ballY = 48.5;
+
+            // Random direction
+            ballSpeedX = Math.random() > 0.5 ? 0.3 : -0.3;
+            ballSpeedY = (Math.random() - 0.5) * 0.6;
+
+            ball.style.left = ballX + '%';
+            ball.style.top = ballY + '%';
+        }
+
+        function resetScore() {
+            playerScore = 0;
+            computerScore = 0;
+            updateScoreDisplay();
+        }
+
+        function updateScoreDisplay() {
+            scoreElement.textContent = `${playerScore} : ${computerScore}`;
+        }
+
+        function restartGame() {
+            resetBall();
+            resetScore();
+            paddle1Y = paddle2Y = 40;
+            paddle1.style.top = paddle1Y + '%';
+            paddle2.style.top = paddle2Y + '%';
+
+            loseMessage.style.display = 'none';
+            gameContainer.style.display = 'block';
+
+            updateDimensions();
+
+            gameStarted = true;
+            gameLoop = setInterval(updateGame, 16);
+        }
+
+        function updateGame() {
+            // Move ball
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+
+            // Ball collision with top and bottom
+            if (ballY <= 0) {
+                ballY = 0;  // Prevent sticking at the top
+                ballSpeedY = Math.abs(ballSpeedY);  // Ensure it bounces down
+            }
+            else if (ballY >= 100 - ballSizeY) {
+                ballY = 100 - ballSizeY;  // Prevent sticking at the bottom
+                ballSpeedY = -Math.abs(ballSpeedY);  // Ensure it bounces up
+            }
+
+            // Simple AI for computer paddle with slight delay and imperfection
+            const paddleCenter = paddle2Y + (paddleHeight / 2);
+            const ballCenter = ballY + (ballSizeY / 2);
+            const aiReactionSpeed = 0.15;  // Lower for harder AI
+            const aiErrorMargin = 3;  // Higher for more mistakes
+
+            // Only move if ball is moving toward AI paddle or close to it
+            if (ballX > 50 || Math.abs(ballX - 50) < 10) {
+                // Move computer paddle toward ball with some error margin
+                if (paddleCenter < ballCenter - aiErrorMargin) {
+                    paddle2Y += aiReactionSpeed;
+                } else if (paddleCenter > ballCenter + aiErrorMargin) {
+                    paddle2Y -= aiReactionSpeed;
+                }
+
+                // Keep computer paddle in bounds
+                if (paddle2Y < 0) paddle2Y = 0;
+                if (paddle2Y > 100 - paddleHeight) paddle2Y = 100 - paddleHeight;
+            }
+
+            // Ball collision with paddles - now using percentages
+            // Player paddle (left)
+            if (ballX <= paddleWidth + 1.5 && ballX >= paddleWidth &&
+                ballY + ballSizeY >= paddle1Y && ballY <= paddle1Y + paddleHeight) {
+
+                ballX = paddleWidth + 1.5;  // Prevent sticking
+                ballSpeedX = Math.abs(ballSpeedX);  // Ensure it moves right
+
+                // Add some angle based on where the ball hits the paddle
+                const hitPosition = (ballY + ballSizeY/2) - (paddle1Y + paddleHeight/2);
+                ballSpeedY = hitPosition * 0.02;
+
+                // Add some randomness and increase speed slightly
+                ballSpeedX *= 1.15;
+                if (ballSpeedX > 1.5) ballSpeedX = 1.5;  // Cap max speed
+            }
+
+            // Computer paddle (right)
+            if (ballX + ballSize >= 100 - paddleWidth - 1.5 && ballX <= 100 - paddleWidth &&
+                ballY + ballSizeY >= paddle2Y && ballY <= paddle2Y + paddleHeight) {
+
+                ballX = 100 - paddleWidth - 1.5 - ballSize;  // Prevent sticking
+                ballSpeedX = -Math.abs(ballSpeedX);  // Ensure it moves left
+
+                // Add some angle based on where the ball hits the paddle
+                const hitPosition = (ballY + ballSizeY/2) - (paddle2Y + paddleHeight/2);
+                ballSpeedY = hitPosition * 0.02;
+
+                // Add some randomness and increase speed slightly
+                ballSpeedX *= 1.15;
+                if (ballSpeedX < -1.5) ballSpeedX = -1.5;  // Cap max speed
+            }
+
+            // Ball out of bounds (scoring)
+            if (ballX < 0) {
+                computerScore++;
+                updateScoreDisplay();
+                resetBall();
+
+                if (computerScore >= winScore) {
+                    endGame(false);
+                }
+            } else if (ballX > 100 - ballSize) {
+                playerScore++;
+                updateScoreDisplay();
+                resetBall();
+
+                if (playerScore >= winScore) {
+                    endGame(true);
+                }
+            }
+
+            // Update positions
+            ball.style.left = ballX + '%';
+            ball.style.top = ballY + '%';
+            paddle2.style.top = paddle2Y + '%';
+
+            // Random glitch effect
+            if (Math.random() < 0.01) {
+                gameContainer.classList.add('glitch-effect');
+                setTimeout(() => {
+                    gameContainer.classList.remove('glitch-effect');
+                }, 100);
+            }
+        }
+
+        function endGame(playerWon) {
+            gameStarted = false;
+            clearInterval(gameLoop);
+            gameContainer.style.display = 'none';
+
+            if (playerWon) {
+                winMessage.style.display = 'block';
+            } else {
+                loseMessage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
