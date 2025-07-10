@@ -1,6 +1,6 @@
 # Website von Marek Krug
 
-Das hier ist meine Website, die ich auf https://marekkrug.de/ hoste. Dort findet ihr Rezepte, 
+Das hier ist meine Website, die ich auf https://marekkrug.de/ hoste. Dort findet ihr Rezepte, kleine Blogs und Programmierprojekte.
 
 # Chirpy Starter
 
